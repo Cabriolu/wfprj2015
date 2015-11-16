@@ -1,0 +1,226 @@
+/*<!--Sprint: 1
+ * @author: Renat Cabriolu
+ * Datum: 25.10.2015
+ * User Story (Nr.: 10) Einheitliches Design
+ * Zeit insgesamt: 8h
+
+
+
+
+
+* 
+    Created on : 21.10.2015, 20:03:02
+    Author     : Renato
+*/
+
+header, nav, main, aside, footer {
+    display: block;
+}
+
+html{
+    font-size: 100%;
+    font-family: Verdana, sans-serif;
+}
+
+/*layoutbereich im body*/
+body{
+    width: 1100px;
+    font-size: 0.875rem;
+    background: white url(../Grafiken/SchwarzerBalken.jpg) 0 0 repeat-x;
+    margin: 1rem auto;
+    
+}
+
+
+/* layoutbereich header*/
+header {
+    position: relative;
+    padding: 0 0rem 1rem 0rem;
+    padding-top: 1rem;
+}
+
+header h1{
+    padding: 0;
+    margin: 0.75rem 0;
+    padding-top: 5rem;
+}
+
+/*links im header*/
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    position: relative;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    min-height: 600px;
+    background: white;
+    padding: 0rem;
+}
+
+footer{
+    color: #aaa;
+    padding: 1rem;
+    background: black;
+    width: 1100px;
+    font-size: 0.875rem;
+    
+}
+
+
+/*metanavigation*/
+nav#metanav{
+    position: absolute;
+    right: 0;
+    top :0;
+    padding-right: 10rem;
+}
+nav#metanav li{
+    display: inline-block;
+    font-size: 0.75rem; /*größe der schrifft*/
+    color: #ccc;
+    margin-right: 0.5rem;
+}
+
+/*Label*/
+.hideme{
+    position: absolute; left: -32768px; top: -32768px; width: 0; height: 0;
+}
+/*suchformulat*/
+nav#metanav form{
+    position: absolute;
+    top: 0;
+    right: 0rem;
+}
+nav#metanav input#Suchfeld{
+    box-sizing: border-box;
+    width: 8rem;
+    height: 26px;
+    background: #eaeaea;
+    color: #242424;
+    padding-left: 0.5rem;
+    border: none;
+}
+nav#metanav input.Suchbutton{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/* grafiken für beispielsweise internationales 
+nav#metanav li: first-of-type {
+    background: url() left 0 no-repeat
+    padding-left: 1rem;
+}*/
+
+
+/* grafiken für beispielsweise internationales 
+nav#metanav li: last-of-type {
+    background: url() left 0 no-repeat
+    padding-left: 1rem;
+}*/
+
+
+
+
+/*Inhaltsbereich*/
+/* alle inhaltsbereiche*/
+main section{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+section.feator-rotator{
+    height: 500px;
+}
+
+section.small-feature{
+    height: 155px;
+    background: #ccc;
+    color: #333;
+}
+
+section.Cathegories{
+    height: 250px;
+    background: #333;
+    color: #ccc;
+}
+
+section.Neue-Produkte{
+    min-height: 650px;
+    width: 66%;
+    float: left;
+    box-sizing: border-box;
+    background: white;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+aside.News{
+    width: 33%;
+    float: right;
+    box-sizing: border-box;
+    background: white;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+
+section.home{
+   /* background: white url(Grafiken/Hintergrund.jpg) no-repeat center; */
+    background-size: cover
+}
+
+/* layoutbereich für Parallax*/
+		#intro { 
+			background: url(../images/intro.png) 50% 0 fixed; 
+			height: auto;  
+			margin: 0 auto; 
+		    width: 100%; 
+		    position: relative; 
+		    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		    padding: 100px 0;
+		}
+		#home { 
+			background: url(../Grafiken/Hintergrund.jpg) 50% 0 fixed; 
+			height: auto;  
+			margin: 0 auto; 
+		    width: 100%; 
+		    position: relative; 
+		    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		    padding: 100px 0;
+		}
+		#about { 
+			background: url(../images/about.png) 50% 0 fixed; 
+			height: auto;
+			margin: 0 auto; 
+		    width: 100%; 
+		    position: relative; 
+		    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		    padding: 100px 0;
+		    color: #fff;
+		}
+                
+               #footer { 
+			background: url(Grafiken/3028600-poster-p-fashion.jpg) 50% 0 fixed; 
+			height: auto;  
+			margin: 0 auto; 
+		    width: 100%; 
+		    position: relative; 
+		    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		    padding: 50px 0;
+		}
+
+		/* Non-essential demo stuff */
+		.hero-unit {
+			background-color: #fff;
+		    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+		}
+		.media-object { width: 64px; height: 64px; padding-bottom: 30px }

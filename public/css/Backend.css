@@ -1,0 +1,70 @@
+/*<!--Sprint: 2
+ * @author: Renat Cabriolu
+ * Datum: 25.10.2015
+ * User Story (Nr.: 150)  Backend Bereich (Design) 
+ * Zeit insgesamt: 1h
+
+*/
+
+header, nav, main, aside, footer {
+    display: block;
+}
+
+html{
+    font-size: 100%;
+    font-family: Verdana, sans-serif;
+}
+
+/*layoutbereich im body*/
+body{
+    width: 100%;
+    font-size: 0.875rem;
+    margin: 1rem auto;
+}
+
+
+/* layoutbereich header*/
+header {
+    position: relative;
+    padding: 0 0rem 1rem 0rem;
+    padding-top: 1rem;
+}
+
+header h1{
+    padding: 0;
+    margin: 0.75rem 0;
+    padding-top: 5rem;
+}
+
+/*links im header*/
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    position: relative;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    min-height: 500px;
+    background: white;
+    padding: 0rem;
+}
+
+footer{
+    color: #aaa;
+    padding: 2rem;
+    background: black;
+}
+
+main section{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+

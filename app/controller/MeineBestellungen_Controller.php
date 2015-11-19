@@ -8,7 +8,7 @@
 
 <?php
 //Zugriff auf Model Klasse
- require ("../model/MeineBestellungen_Model.php");
+ require ("../models/MeineBestellungen_Model.php");
  
 class MeineBestellungen_Controller{
 	//Methode innerhalb der Klasse wird bei Erzeugung eines Controller Objekts erzeugt

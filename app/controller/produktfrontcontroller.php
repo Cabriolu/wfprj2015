@@ -6,7 +6,7 @@
 //Aufwand: 3 Stunden
 //Beschreibung: Es wird der Controller des Produkts im Frontend erstellt. 
 
-require_once '../model/Produkt_Model.php';
+require_once '../models/Produkt_Model.php';
 
 class Produktfrontcontroller {
 

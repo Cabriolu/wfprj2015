@@ -4,4 +4,9 @@ Task: 140-2 (#10190) Eigenen Code an MVC anpassen
 Aufwand: 0,5 Stunden
 Beschreibung: Es wird ein View über ein bestimmtes Produkt erstellt.     -->
 
-<div><h1>Produktansicht</h1></div>
+<!--Sprint 3, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 19.11.2015 Version 2
+UserStory: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
+Task: 170-1 (#10329) Zusammenführen
+Aufwand: 2 Stunden
+Beschreibung: Es wird ein View für alle Produkte aus einer Kategorie gezeigt  -->
+

@@ -6,11 +6,11 @@
 //Aufwand: 4 Stunden
 //Beschreibung: Es wird der grundlegende Aufbau des Produkts als MVC erstellt. 
 
-include_once '../config/Connect_Mysql.php';
+include_once '../app/config/Connect_Mysql.php';
 
 class Produkt_Model {
 
-    protected $name;
+    public $egal;
     protected $hersteller;
     protected $preis;
     protected $sql;
@@ -167,6 +167,36 @@ class Produkt_Model {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         }
         echo '</table>';
+        $con = null;
+        $this->con->schließen();
+    }
+    
+        function ansicht($kategorie) {
+            echo 'hallo';
+        $sql = 'Select Name, Farbe, Groeße, Hersteller, Preis, SalePreis from Produkt where Kategorie_KatID = '.$kategorie;
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $total = $stmt->rowCount();
+        $a = 0;
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        while ($a < $total) {
+            if ($row['SalePreis'] < $row['Preis']) {
+                $preis = $row['SalePreis'];
+            } else {
+                $preis = $row['Preis'];
+            }
+            echo '<div class="col-xs-6 col-lg-4"><h2><a href="/mysql2015/public/ProduktlisteController">' . $row['Name']
+            . ' </a><nbsp><nbsp><nbsp><nbsp>' . $preis . '</h2>';
+            echo '<p>Hersteller: ' . $row['Hersteller'] . '<br>Farbe: ' . $row['Farbe']
+            . '<br>Größe: ' . $row['Groeße'] . '<br></p>';
+            echo '</div>';
+            $a++;
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
         $con = null;
         $this->con->schließen();
     }

@@ -66,8 +66,8 @@ class Produkt_Model {
     }
 
     // function um alle Produkte zeigen zu lassen
-    public function produktliste() {
-        $this->sql = 'Select Produktnummer, Name, Hersteller, alterPreis from produkt';
+    public function produktliste($kategorie) {
+        $this->sql = 'Select Produktnummer, Name, Hersteller, alterPreis from produkt where Kategorien_Kategorie = '.$kategorie;
         // Verbinden mit Datenbank
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();

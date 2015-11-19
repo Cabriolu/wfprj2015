@@ -67,7 +67,8 @@ class Kategorie_Model {
         $con = null;
         $this->con->schließen();
     }
-
+    
+    // function um die jeweiligen Oberkategorien zu sehen und dann in die dazugehörigen Kategorien zu gelangen
     function kategorieauswaehlen() {
         $this->sql = 'Select Oberkat from Oberkategorie';
         $this->con = new Connect_Mysql();

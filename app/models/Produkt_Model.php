@@ -1,5 +1,11 @@
 <?php
 
+//Sprint 3, Gruppe 4 Onlineshop, 
+//Verfasser: Marcel Riedl, Datum: 19.11.2015 Version 1
+//UserStory: 270 Als Programmierer möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen
+//Task: 270-1 (#10329) Zusammenführen
+//Aufwand:  Stunden
+//Beschreibung: Es wird das Model zum Produkt erstellt. 
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 09.11.2015 Version 2
 //UserStory: Als Programmierer möchte ich den Aufbau als Model-View-Controller (MVC) haben.
 //Task: 140-2 (#10190) Eigenen Code an MVC anpassen
@@ -65,37 +71,10 @@ class Produkt_Model {
         return "Das Produkt wurde aktualisiert.";
     }
 
-    // function um alle Produkte zeigen zu lassen
-    public function produktliste($kategorie) {
-        $this->sql = 'Select Produktnummer, Name, Hersteller, alterPreis from produkt where Kategorien_Kategorie = '.$kategorie;
-        // Verbinden mit Datenbank
-        $this->con = new Connect_Mysql();
-        $con = $this->con->verbinden();
-        // Prepared Statement erstellen und ausführen
-        $stmt = $con->prepare($this->sql);
-        $stmt->execute();
-
-        $total = $stmt->rowCount();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $a = 0;
-
-
-        while ($a < $total) {
-            echo '<tr> <td> <a href ="../controller/produktfrontcontroller.php?ansicht&ha=' . $row['Produktnummer'] . '" >'
-            . $row['Name'] . ' </a> </td> <td> ' . $row['alterPreis'] . ' </td> </tr>';
-            echo '<tr><td>Hersteller:' . $row['Hersteller'] . ' </td><td></td></tr>';
-            $a++;
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        }
-        echo '</table>';
-        $con = null;
-        $this->con->schließen();
-    }
-
 // function um ein spezielles Produkt anzuzeigen
     public function produktansicht($produktnummer) {
         // Abfrage nach dem Produkt
-        $this->sql = 'Select Name, Hersteller, alterPreis from produkt where Produktnummer = ' . $produktnummer;
+        $this->sql = 'Select Name, Farbe, Groeße, Hersteller, Preis, SalePreis from produkt where Produktnummer = ' . $produktnummer;
         // Verbindung zur Datenbank
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
@@ -108,8 +87,15 @@ class Produkt_Model {
 
         // Anzeige des Produkts
         while ($a < $total) {
+            if ($row['SalePreis'] < $row['Preis']) {
+                $preis = $row['SalePreis'];
+            } else {
+                $preis = $row['Preis'];
+            }
+            
             echo '<h2>' . $row['Name'] . '</h2><br>' . $row['Hersteller'] . '<br>'
-            . $row['alterPreis'] . '<br>';
+            . $preis . '<br>';
+            echo 'Farbe:'.$row['Farbe'].' Größe: '.$row['Groeße'];
             $a++;
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         }
@@ -170,10 +156,11 @@ class Produkt_Model {
         $con = null;
         $this->con->schließen();
     }
-    
-        function ansicht($kategorie) {
-            echo 'hallo';
-        $sql = 'Select Name, Farbe, Groeße, Hersteller, Preis, SalePreis from Produkt where Kategorie_KatID = '.$kategorie;
+
+    // function um Produkte aus einer Kategorie zu sehen
+    function ansicht($kategorie) {
+        echo 'hallo';
+        $sql = 'Select Produktnummer, Name, Farbe, Groeße, Hersteller, Preis, SalePreis from Produkt where Kategorie_KatID = ' . $kategorie;
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
 
@@ -189,8 +176,8 @@ class Produkt_Model {
             } else {
                 $preis = $row['Preis'];
             }
-            echo '<div class="col-xs-6 col-lg-4"><h2><a href="/mysql2015/public/ProduktlisteController">' . $row['Name']
-            . ' </a><nbsp><nbsp><nbsp><nbsp>' . $preis . '</h2>';
+            echo '<div class="col-xs-6 col-lg-4"><h2><a href="/mysql2015/public/ProduktansichtController/'
+            . $row['Produktnummer'] . '">' . $row['Name'] . ' </a><nbsp><nbsp><nbsp><nbsp>' . $preis . '</h2>';
             echo '<p>Hersteller: ' . $row['Hersteller'] . '<br>Farbe: ' . $row['Farbe']
             . '<br>Größe: ' . $row['Groeße'] . '<br></p>';
             echo '</div>';

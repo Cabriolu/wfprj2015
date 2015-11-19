@@ -11,12 +11,12 @@ require_once '../app/config/Connect_Mysql.php';
 
 class ProduktlisteController extends Controller {
 
-    function index($kategorie) {
+    function index($produktnummer) {
         $produktliste = $this->model('Produkt_Model');
         $produktliste->egal = '';
         //home index view
         $this->view('Header', ['view' => $produktliste->egal]);
-        $this->view('Produkt/Produktliste', ['view' => $produktliste->ansicht($kategorie)]);
+        $this->view('Produkt/Produktansicht', ['view' => $produktliste->produktansicht($produktnummer)]);
         $this->view('Footer', ['view' => $produktliste->egal]);
     }
 

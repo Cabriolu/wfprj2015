@@ -11,7 +11,7 @@
         <div class="col-md-3">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Fragen<span class="sr-only">(aktuell)</span></a></li>
-            <li><a href="#">Hilfe</a></li>
+            <li><a href="/wfprj/public/Impressum">Impressum</a></li>
             <li><a href="#">Sendungsverfolgung</a></li>
             <li><a href="#">Rücksendung</a></li>
           </ul>

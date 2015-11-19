@@ -30,7 +30,7 @@ and open the template in the editor.
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Die 3 Meta-Tags oben *müssen* zuerst im head stehen; jeglicher sonstiger head-Inhalt muss *nach* diesen Tags kommen -->
-    <title>OnlineShop</title>
+    <title>Fashion-Factory</title>
 
     <!-- Bootstrap -->
     <link href="../public/css/bootstrap.css" rel="stylesheet">
@@ -90,7 +90,7 @@ and open the template in the editor.
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar/">Warenkorb</a></li>
-            <li><a href='#'>Registrieren</a></li>
+            <li><a href='/wfprj/public/Registrieren'>Registrieren</a></li>
             <li><a href="/wfprj/public/backend">Login</a></li>
             <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Suchen...">

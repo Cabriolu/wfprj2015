@@ -4,9 +4,10 @@
 //Verfasser: Marcel Riedl, Datum: 19.11.2015 Version 1
 //UserStory: 270 Als Programmierer möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen
 //Task: 270-1 (#10329) Zusammenführen
-//Aufwand:  Stunden
+//Aufwand: 2 Stunden
 //Beschreibung: Es wird das Model zum Produkt erstellt. 
-//Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 09.11.2015 Version 2
+
+////Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 09.11.2015 Version 2
 //UserStory: Als Programmierer möchte ich den Aufbau als Model-View-Controller (MVC) haben.
 //Task: 140-2 (#10190) Eigenen Code an MVC anpassen
 //Aufwand: 4 Stunden
@@ -28,8 +29,9 @@ class Produkt_Model {
     }
 
     // function um ein Produkt anlegen zu können
+    // TODO
     public function anlegen($name, $hersteller, $preis, $kategorie) {
-        $this->sql = 'insert into Produkt (Produktnummer, Name, Hersteller, alterPreis, neuerPreis, Kategorien_Kategorie) '
+        $this->sql = 'insert into Produkt (Produktnummer, Name, Farbe, Groeße, Hersteller, Preis, SalePreis, Kategorie_KatID) '
                 . 'values (null, "' . $name . '", "' . $hersteller . '", ' . $preis . ',0.0 , "' . $kategorie . '");';
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
@@ -71,7 +73,7 @@ class Produkt_Model {
         return "Das Produkt wurde aktualisiert.";
     }
 
-// function um ein spezielles Produkt anzuzeigen
+    // function um ein spezielles Produkt anzuzeigen
     public function produktansicht($produktnummer) {
         // Abfrage nach dem Produkt
         $this->sql = 'Select Name, Farbe, Groeße, Hersteller, Preis, SalePreis from produkt where Produktnummer = ' . $produktnummer;
@@ -92,10 +94,10 @@ class Produkt_Model {
             } else {
                 $preis = $row['Preis'];
             }
-            
+
             echo '<h2>' . $row['Name'] . '</h2><br>' . $row['Hersteller'] . '<br>'
             . $preis . '<br>';
-            echo 'Farbe:'.$row['Farbe'].' Größe: '.$row['Groeße'];
+            echo 'Farbe:' . $row['Farbe'] . ' Größe: ' . $row['Groeße'];
             $a++;
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         }

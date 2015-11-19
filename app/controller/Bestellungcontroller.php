@@ -13,7 +13,7 @@ include_once '../model/Bestellung_Model.php';
 class Bestellungcontroller {
 
     function __construct() {
-        // objekt von Bestellung_Model erstellen
+        // Objekt von Bestellung_Model erstellen
         $bestellung = new Bestellung_Model();
         // Kundennummer anhand vom Login ermitteln
         $kundennummer = 1;

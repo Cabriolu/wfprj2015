@@ -2,9 +2,9 @@
 
 //Sprint 3, Gruppe 4 Onlineshop, 
 //Verfasser: Marcel Riedl, Datum: 19.11.2015 Version 1
-//UserStory: Als Programmierer m
-//Task:  (#) Zusammenführen
-//Aufwand:  Stunden
+//UserStory: 270 Als Programmierer möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
+//Task: 270-1 (#10329) Zusammenführen
+//Aufwand: 2 Stunden
 //Beschreibung: Es wird der Controller des Produkts im Frontend erstellt. 
 // von Kerstin Gräter
 require_once '../app/config/Connect_Mysql.php';

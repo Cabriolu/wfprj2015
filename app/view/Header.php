@@ -66,17 +66,26 @@ and open the template in the editor.
                  <li class="dropdown">
                  <a href="../app/view/manview.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herren <span class="caret"></span></a>
                  <ul class="dropdown-menu">
-                     <li><a href="/wfprj2015/public/man">Sale</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Hemden</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Jacken&Mäntel</li>
-                    <li><a href="#">T-Shirts</a></li>
-                    <li><a href="#">Anzüge</a></li>
+                     <li><a href="/wfprj2015/public/man">Jacken</a></li>
+                    <li><a href="#">Oberbekleidung</a></li>
+                    <li><a href="#">Hosen</a></li>
+                    <li><a href="#">Unterwäsche</a></li>
+                    <li><a href="#">Accessoires</a></li>
                 </ul>
                 </li>
                    <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Damen <span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                    <li><a href="#">Jacken</a></li>
+                    <li><a href="#">Oberbekleidung</a></li>
+                    <li><a href="#">Hosen</a></li>
+                    <li><a href="#">Unterwäsche</a></li>
+                    <li><a href="#">Accessoires</a></li>
+                    <li><a href="#">Röcke</a></li>
+                </ul>
+                </li>
+                 <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kinder <span class="caret"></span></a>
                  <ul class="dropdown-menu">
                     <li><a href="#">Sale</a></li>
                     <li><a href="#">Jeans</a></li>
@@ -90,8 +99,10 @@ and open the template in the editor.
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar/">Warenkorb</a></li>
-            <li><a href='/wfprj/public/Registrieren'>Registrieren</a></li>
-            <li><a href="/wfprj/public/backend">Login</a></li>
+            <li><a href='/wfprj2015/public/Registrieren'>Registrieren</a></li>
+            <li><a href="/wfprj2015/public/backend">Login</a></li>
+            <li><a href="#">Profiel</a></li>
+            
             <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Suchen...">
             </form>

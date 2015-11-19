@@ -1,12 +1,12 @@
 <?php
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Denis Kevljanin, Datum: 05.11.2015
-//UserStory: 
+//UserStory: Als Kunde möchte ich eine automatische Bestellbestätigung per Mail erhalten
 //Task: 180-1 Automatischen E-Mailversand programmieren (#10196)
 //Aufwand: 22 Stunden
 //Beschreibung: Es wird eine automatich generierte Bestellbestätigung verschickt 
 
-require ('PHPMailer/PHPMailerAutoload.php');
-require ('userdata.php');
+require ('../PHPMailer/PHPMailerAutoload.php');
+require ('../model/userdata.php');
    
 //Erstellen der Klasse Mail
 class Mail{
@@ -66,9 +66,8 @@ public function mail() {
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     }
     else {
-        
+		$data->closeDB();
         echo 'Message has been sent';
-        $data->closeDB();
     }
 }
 }

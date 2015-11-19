@@ -66,7 +66,7 @@ and open the template in the editor.
                  <li class="dropdown">
                  <a href="../app/view/manview.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herren <span class="caret"></span></a>
                  <ul class="dropdown-menu">
-                     <li><a href="/wfprj/public/man">Sale</a></li>
+                     <li><a href="/wfprj2015/public/man">Sale</a></li>
                     <li><a href="#">Jeans</a></li>
                     <li><a href="#">Hemden</a></li>
                     <li role="separator" class="divider"></li>

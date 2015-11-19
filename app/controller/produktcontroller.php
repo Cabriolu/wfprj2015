@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/Produkt_Model.php';
+require_once '../models/Produkt_Model.php';
 
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 05.11.2015 Version 1
 //UserStory: Als Programmierer möchte ich meinen Code als Model-View-Controller (MVC) haben.

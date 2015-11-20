@@ -8,13 +8,14 @@
 
 <?php
 //Zugriff auf Model Klasse
- require ("../models/MeineBestellungen_Model.php");
+include  '../models/MeineBestellungen_Model.php';
  
 class MeineBestellungen_Controller{
 	//Methode innerhalb der Klasse wird bei Erzeugung eines Controller Objekts erzeugt
     public function __construct() {
        
          //$this->test();
+        
          $this->alleBestellungen();
     }
     

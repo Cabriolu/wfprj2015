@@ -70,7 +70,7 @@ and open the template in the editor.
                     <li><a href="/wfprj2015/public/ProduktlisteController/8">Oberbekleidung</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/9">Hosen</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/10">Unterwäsche</a></li>
-                    <li><a href="/wfprj2015/public/ProduktlisteController/11">Accessoires</a></li>
+                    <li><a href="/wfprj2015/public/man">Accessoires</a></li>
                 </ul>
                 </li>
                    <li class="dropdown">
@@ -99,9 +99,9 @@ and open the template in the editor.
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar/">Warenkorb</a></li>
-            <li><a href='/wfprj2015/public/Registrieren'>Registrieren</a></li>
+            <li><a href='/wfprj2015/public/Registrieren_Controller'>Registrieren</a></li>
             <li><a href="/wfprj2015/public/backend">Login</a></li>
-            <li><a href="#">Profil</a></li>
+            <li><a href="/wfprj2015/public/Profielcontroller">Profil</a></li>
             
             <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Suchen...">

@@ -225,7 +225,3 @@ section.home{
 		}
 		.media-object { width: 64px; height: 64px; padding-bottom: 30px }
                 
-//Style für Groessentabellen
-        table.groessentabelle table, th, td {
-                border: 1px solid black;
-            }

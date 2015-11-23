@@ -5,7 +5,7 @@ Task: 220-1 (#10328) Größentabelle implementieren
 Aufwand:  Stunden
 Beschreibung: Größentabelle für Herren
 Hier wird der Controller dazu erstellt
-Liegt vorrübergehen auf Herren -> Sale -> Analysen
+
 -->
 
 <?php

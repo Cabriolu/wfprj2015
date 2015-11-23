@@ -1,5 +1,6 @@
 <?php
 
+// UPDATE AUF VERSION 2, 23.11.15
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 09.11.2015 Version 1
 //UserStory: Als Programmierer möchte ich den Aufbau als Model-View-Controller (MVC) haben.
 //Task: 110-2 (#10190) MVC Programmieren
@@ -7,8 +8,16 @@
 //Beschreibung: Es wird der grundlegende Aufbau der Bestellabwicklung als MVC erstellt.
 // Hier wird das Model dazu erstellt
 
+
+session_start();
 // include um die Klasse Connect_Mysql einzubinden
 include_once '../config/Connect_Mysql.php';
+// include Warenkorb von Frindt
+include '../lib/Warenkorb.php';
+// inlude Mailer von Kevljanin
+include '../controller/mail.php';
+// include Login von Frindt
+include '../models/LoginModel';
 
 class Bestellung_Model {
 
@@ -44,12 +53,12 @@ class Bestellung_Model {
     }
 
     // function um eine Adresse eintragen zu können
-    function adresse($plz, $ort, $straße, $kundennummer) {
+    function adresse($vorname, $nachname, $plz, $ort, $straße, $kundennummer) {
         $wahr = plzvorhanden($plz);
-
+        // sql statements für inserts 
         $sqlPLZ = 'insert into postleitzahl (plz, ort) values (' . $plz . ', ' . $ort . ');';
-        $sqlAdresse = 'insert into adresse (straße, kunde_kundennummer, postleitzahl_plz) values ('
-                . $straße . ', ' . $kundennummer . ', ' . $plz . ')';
+        $sqlAdresse = 'insert into lieferadresse (LieferID, Vorname, Nachname, straße, kunde_kundennummer, postleitzahl_plz) values (null, '
+                . $vorname . ','. $nachname .',' . $straße . ', ' . $kundennummer . ', ' . $plz . ')';
 
         // mit der Datenbank verbinden
         $this->con = new Connect_Mysql();
@@ -100,8 +109,23 @@ class Bestellung_Model {
 
     // function um die Bestellung abzuschließen
     function bestellungabschließen() {
-        // Deki's mail mit rein
-        return 'Ihre Bestellung ist abgeschlossen! ';
+        //Speicherung von Daten aus Warenkorb in table Bestellung
+        $menge = $SESSION['warenkorb'];
+        $gesamtpreis = $SESSION['warenkorb'];
+        $timestamp = time();
+        $datum = date("d.m.Y - H:i", $timestamp);
+        $produktnr = $SESSION['warenkorb'];
+        $kundennr = $SESSION['logged']['id'];
+        $query = 'insert into Bestellung (Bestellnummer, Menge, Gesamtpreis, Datum, Produkt_Produktnummer, Kunde_Kundennummer) values (null '
+                    . $menge . ',' . $gesamtpreis . ',' . $datum . ',' . $produktnr . ',' . $kundennr .')';
+        
+       
+        //Objekt von Denis Kevljanins Mail
+        $mail = new Mail();
+        
+        $ende = 'Vielen Dank für Ihre Bestellung! Sie erhalten in Kürze eine Bestätigung per E-Mail.';
+                
+        return $ende;
     }
 
 }

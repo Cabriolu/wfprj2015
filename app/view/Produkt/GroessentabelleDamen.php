@@ -8,6 +8,7 @@ View
 -->
 <main>
     <style>
+        /*style für table muss noch ausgelagert werden*/ 
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -16,7 +17,7 @@ View
             padding: 15px;
         }
     </style>
-
+    
     <h2>Größentabelle Damen</h2>
     <br>
     <br>
@@ -35,7 +36,7 @@ View
     - Die Innenbeinlänge wird zwischen Schritt und Boden gemessen.
     <br>
     <br>
-
+<!--    Begin der Tabelle für Größen-->
     <h3>Pullover, Blusen, Kleider, Röcke usw.</h3>
     <table>
         <tr>
@@ -130,6 +131,7 @@ View
     </table>
     <br>
     <br>
+<!--    Begin der zweiten Tabelle für Jeans Größen-->
     <h3>Jeans</h3>
     <br>
     Jeansgrößen werden meist in Inch angegeben, z. B. 30/32. Die erste Ziffer gibt die Bundweite an, die zweite die Schrittlänge.

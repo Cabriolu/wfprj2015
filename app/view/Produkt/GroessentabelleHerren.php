@@ -8,6 +8,7 @@ View
 -->
 <main>
     <style>
+/*        style für tabellen, wird noch ausgelagert*/
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -38,7 +39,7 @@ View
     - Die Schrittlänge wird zwischen Schritt und Boden gemessen.
     <br>
     <br>
-
+<!--    Erste Tabelle -->
     <h3>Hemden</h3>
     <table>
         <tr>
@@ -82,7 +83,8 @@ View
         </tr>
     </table>
     <br>
-    <br>    
+    <br>  
+<!--    Beginn zweite Tabelle-->
     <h3>Hosen & Oberteile</h3>
     <table>
         <tr>
@@ -171,6 +173,7 @@ View
     </table>
     <br>
     <br>
+<!--    Begin für Tabelle Jeans-->
     <h3>Jeans</h3>
     <br>
     Jeansgrößen werden meist in Inch angegeben, z. B. 30/32. 

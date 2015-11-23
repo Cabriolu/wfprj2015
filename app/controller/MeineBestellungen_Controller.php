@@ -8,15 +8,16 @@
 
 <?php
 //Zugriff auf Model Klasse
-include  '../models/MeineBestellungen_Model.php';
+
  
-class MeineBestellungen_Controller{
+class MeineBestellungen_Controller extends Controller{
 	//Methode innerhalb der Klasse wird bei Erzeugung eines Controller Objekts erzeugt
-    public function __construct() {
+    public function index() {
        
          //$this->test();
-        
+         $this->model('MeineBestellungen_Model');
          $this->alleBestellungen();
+         
     }
     
    

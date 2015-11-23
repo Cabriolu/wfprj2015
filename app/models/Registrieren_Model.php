@@ -2,19 +2,19 @@
 <?php
 
 //Zugriff auf die Datenbankverbindungsklasse
-include "../config/Connect_Mysql.php";
+
 
 class Registrieren_Model{
    
-    private $sql; 
-    private $Email;
-    private $Passwort;
-    private $Vorname;
-    private $Nachname;
-    private $Geschlecht;
-    private $Geburtsdatum;
-    private $Plz;
-    private $Strasse;
+    public $sql; 
+    public $Email;
+    public $Passwort;
+    public $Vorname;
+    public $Nachname;
+    public $Geschlecht;
+    public $Geburtsdatum;
+    public $Plz;
+    public $Strasse;
     //Datenbankverbindung versuchen aufzubauen sobald ein Objekt der Klasse erzeugt wird
     public function __construct(){
         

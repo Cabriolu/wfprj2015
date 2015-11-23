@@ -10,11 +10,11 @@ class ProduktloeschenController extends Controller {
 
     function index() {
         $produkt = $this->model('Produkt_Model');
-        
+
         $this->view('backend/Backendheader');
-        $this->view('Produkt/Produkt_Anzeigen',$produkt->alleProdukte());
-        
-        if(isset($_Post['loeschen'])){
+        $this->view('Produkt/Produkt_Anzeigen', $produkt->alleProdukte());
+
+        if (isset($_Post['loeschen'])) {
             $produkt->löeschen($_POST['Produktnr']);
         }
     }

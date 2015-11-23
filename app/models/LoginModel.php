@@ -1,6 +1,6 @@
 <?php
 require_once '../app/config/Connect_Mysql.php';
-
+session_start();
 class LoginModel {
 
     private $res;

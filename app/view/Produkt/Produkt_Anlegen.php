@@ -1,7 +1,7 @@
 <!--Sprint 3, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 23.11.2015 Version 2
 UserStory: 270 Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
 Task: 270-1 (#10329) Zusammenführen
-Aufwand: 0,5 Stunden
+Aufwand: 1 Stunden
 Beschreibung: Es wird der View zum Anlegen eines neuen Produkts erstellt.     -->
 
 

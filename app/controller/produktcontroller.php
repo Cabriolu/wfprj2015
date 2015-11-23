@@ -10,15 +10,15 @@ class Produktcontroller extends Controller {
 
     function index() {
         $produkt = $this->model('Produkt_Model');
-        
+
         $this->view('backend/Backendheader');
         $this->view('Produkt/Produkt_Anlegen');
-        if(isset($_POST['anlegen'])){
+        if (isset($_POST['anlegen'])) {
             $produkt->anlegen($_POST['name'], $_POST['Hersteller'], $_POST['farbe'], $_POST['groeße'], $_POST['preis'], $_POST['Kategorie']);
         }
     }
-}
 
+}
 
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 05.11.2015 Version 1
 //UserStory: Als Programmierer möchte ich meinen Code als Model-View-Controller (MVC) haben.

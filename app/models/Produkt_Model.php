@@ -2,17 +2,18 @@
 
 //Sprint 3, Gruppe 4 Onlineshop, 
 //Verfasser: Marcel Riedl, Datum: 19.11.2015 Version 1
+//UserStory: 90 Als Kunde möchte ich eine einfache Navigation in Kategorien, so dass ich schnell mein Wunschprodukt finden kann.
 //UserStory: 270 Als Programmierer möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen
 //Task: 270-1 (#10329) Zusammenführen
-//Aufwand: 2 Stunden
+//Task: 90-1 (10315) Kategorien auswählen und programmieren
+//Aufwand: 5 Stunden
 //Beschreibung: Es wird das Model zum Produkt erstellt. 
-
-////Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 09.11.2015 Version 2
+//Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 09.11.2015 Version 2
 //UserStory: Als Programmierer möchte ich den Aufbau als Model-View-Controller (MVC) haben.
 //Task: 140-2 (#10190) Eigenen Code an MVC anpassen
 //Aufwand: 4 Stunden
 //Beschreibung: Es wird der grundlegende Aufbau des Produkts als MVC erstellt. 
-
+// Kerstin Gräter
 include_once '../app/config/Connect_Mysql.php';
 
 class Produkt_Model {
@@ -76,36 +77,17 @@ class Produkt_Model {
     // function um ein spezielles Produkt anzuzeigen
     public function produktansicht($produktnummer) {
         // Abfrage nach dem Produkt
-        $this->sql = 'Select Name, Farbe, Groeße, Hersteller, Preis, SalePreis from produkt where Produktnummer = ' . $produktnummer;
+        $this->sql = 'Select Produktnummer, Name, Farbe, Groeße, Hersteller, Preis, SalePreis from produkt where Produktnummer = ' . $produktnummer;
         // Verbindung zur Datenbank
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
         // Prepared Statement erzeugen und ausführen
         $stmt = $con->prepare($this->sql);
         $stmt->execute();
-        $total = $stmt->rowCount();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $a = 0;
-
-        // Anzeige des Produkts
-        while ($a < $total) {
-            if ($row['SalePreis'] < $row['Preis']) {
-                $preis = $row['SalePreis'];
-            } else {
-                $preis = $row['Preis'];
-            }
-
-            echo '<h2>' . $row['Name'] . '</h2><br>' . $row['Hersteller'] . '<br>'
-            . $preis . '<br>';
-            echo 'Farbe:' . $row['Farbe'] . ' Größe: ' . $row['Groeße'];
-            $a++;
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        }
-        echo'<form action="../../controller/produktcontroller.php" method="post">'
-        . '<input type="button" name="warenkorb" value="In den Warenkorb">'
-        . '<input type="button" name="sofortkauf" value="Direktkauf"></form>';
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
         $con = null;
         $this->con->schließen();
+        return $data;
     }
 
     // function um alle produkte eines speziellen Herstellers anzuzeigen
@@ -159,33 +141,44 @@ class Produkt_Model {
         $this->con->schließen();
     }
 
-    // function um Produkte aus einer Kategorie zu sehen
-    function ansicht($kategorie) {
-        echo 'hallo';
-        $sql = 'Select Produktnummer, Name, Farbe, Groeße, Hersteller, Preis, SalePreis from Produkt where Kategorie_KatID = ' . $kategorie;
+    function liste($kategorie) {
+        $this->sql = 'Select Produktnummer, Name, Farbe, Groeße, Hersteller, Preis, SalePreis from Produkt where Kategorie_katID = ' . $kategorie;
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
 
-        $stmt = $con->prepare($sql);
+        $stmt = $con->prepare($this->sql);
         $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $con = null;
+        $this->con->schließen();
+        return $data;
+    }
+
+    // function um Produkte aus einer Kategorie zu sehen
+    public function produktliste($kategorie) {
+        $this->sql = 'Select Produktnummer, Name,Farbe, Groeße, Hersteller, Preis, SalePreis from produkt where Kategorie_KatID = ' . $kategorie;
+        // Verbinden mit Datenbank
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+        // Prepared Statement erstellen und ausführen
+        $stmt = $con->prepare($this->sql);
+        $stmt->execute();
+
         $total = $stmt->rowCount();
-        $a = 0;
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $a = 0;
+        echo '<main>';
 
         while ($a < $total) {
-            if ($row['SalePreis'] < $row['Preis']) {
-                $preis = $row['SalePreis'];
-            } else {
-                $preis = $row['Preis'];
-            }
-            echo '<div class="col-xs-6 col-lg-4"><h2><a href="/mysql2015/public/ProduktansichtController/'
-            . $row['Produktnummer'] . '">' . $row['Name'] . ' </a><nbsp><nbsp><nbsp><nbsp>' . $preis . '</h2>';
-            echo '<p>Hersteller: ' . $row['Hersteller'] . '<br>Farbe: ' . $row['Farbe']
-            . '<br>Größe: ' . $row['Groeße'] . '<br></p>';
-            echo '</div>';
+            echo '<div><h2><a href ="../ProduktansichtController/' . $row['Produktnummer'] . '" >'
+            . $row['Name'] . ' </a></h2> <nbsp><nbsp><nbsp>' . $row['Preis'] . ' €';
+            echo '<br>Hersteller:' . $row['Hersteller'] . '<br>';
+            echo 'Farbe: ' . $row['Farbe'];
+            echo '     Größe: ' . $row['Groeße'];
             $a++;
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         }
+        echo '</main>';
         $con = null;
         $this->con->schließen();
     }

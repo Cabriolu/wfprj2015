@@ -33,8 +33,8 @@ and open the template in the editor.
     <title>Fashion-Factory</title>
 
     <!-- Bootstrap -->
-    <link href="../public/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/sty.css">
+    <link href="/wfprj2015/public/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/wfprj2015/public/css/sty.css">
     <script src="../public/js/jquery-1.6.1.min.js"></script>
     <script src="../public/js/bootstrap.min.js"></script>
     <script src="../public/js/bootstrap.min_1.js"></script>
@@ -52,7 +52,7 @@ and open the template in the editor.
         <div class="container">
             <div class="navbar-header">
                  <a href="#" title="Zur startseite">
-                     <img src="../public/Grafiken/Logo.png" width="121" height="51" alt="Logo">
+                     <img src="/wfprj2015/public/Grafiken/Logo.png" width="121" height="51" alt="Logo">
                 </a>
                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                  <span class="sr-only">Navigation ein-/ausblenden</span>
@@ -98,9 +98,9 @@ and open the template in the editor.
                 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Warenkorb</a></li>
+            <li><a href="/wfprj2015/public/WarenkorbController/getArtikel">Warenkorb</a></li>
             <li><a href='/wfprj2015/public/Registrieren_Controller'>Registrieren</a></li>
-            <li><a href="/wfprj2015/public/backend">Login</a></li>
+            <li><a href="/wfprj2015/public/LoginController/rufView">Login</a></li>
             <li><a href="/wfprj2015/public/Profielcontroller">Profil</a></li>
 <!--            Verweis auf Suche_Controller von @Kevljanin,Denis-->
             <form class="navbar-form navbar-right" action="/wfprj2015/public/Suche_Controller" method="post">

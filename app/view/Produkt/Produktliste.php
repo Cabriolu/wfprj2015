@@ -9,3 +9,24 @@ Beschreibung: Es wird ein View für alle Produkte aus einer Kategorie gezeigt  -
 //Task: 140-2 (#10200) Eigenen Code an MVC anpassen
 //Aufwand: 0,5 Stunden
 //Beschreibung: Es wird der View der Produktliste erstellt. -->
+
+
+<?php
+$a = 0;
+$total = sizeof($data);
+
+while ($a < $total) {
+    if ($data[$a]['SalePreis'] < $data[$a]['Preis']) {
+        $preis = $data[$a]['SalePreis'];
+    } else {
+        $preis = $data[$a]['Preis'];
+    }
+    echo '<dir class="col-xs-6 col-lg-4"><h2><a href = "../ProduktansichtController/'
+    . $data[$a]['Produktnummer'] . '">' . $data[$a]['Name'] . '</a></h2>';
+    echo 'Preis: ' . $preis;
+    echo 'Hersteller: ' . $data[$a]['Hersteller'] . '</dir>';
+    echo 'Farbe: ' . $data[$a]['Farbe'];
+    echo 'Größe: ' . $data[$a]['Groeße'];
+    $a++;
+}
+?>

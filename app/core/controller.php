@@ -9,6 +9,9 @@ class Controller{
     }
     
     public function view($view, $data =[]) {
+        
+        require_once '../app/view/Header.php';
         require_once '../app/view/'.$view.'.php';
+         require_once '../app/view/Footer.php';
     }
 }

@@ -1,7 +1,7 @@
  <main>
      <p> <h3>Zum Registrieren, bitte das Formular ausfuellen. </h3> </p>
 		<!--mit post methode, die eingegebene Werte weiterleiten-->
-                <form action="/wfprj2015/public/Registrieren_Controller/Hinzufügen" method="post" >
+                <form action="/wfprj2015/public/Registrieren_Controller/Hinzufuegen" method="post" >
                         <!-- Eingabefälder für das Formular-->
 			  <table border="0" cellpadding="0" cellspacing="4">
                                 <tr>

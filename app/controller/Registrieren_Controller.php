@@ -11,31 +11,31 @@ class Registrieren_Controller extends Controller{
     private $Plz;
     private $Strasse;
     // Zwischenspeichern der Daten aus dem View bei Erzeugung eines Controller Objekts
-    public function __construct(){
-       
-  /*      $this->Email = $_POST['Email'];
+    public function index(){     
+               
+                $this->view('Header',[]);
+                $this->view('Registrieren/Registrieren',[ $this->model('Registrieren_Model')]);
+                $this->view('Footer',[]);
+                $this->model('Registrieren_Model');
+        
+    }
+    //Methode zum Erzeugen eines Model Objekts und Übergabe der Parameter für die Datenbankanfrage
+    public function hinzufuegen(){
+     
+        $this->Email = $_POST['Email'];
         $this->Passwort = $_POST['Passwort'];
         $this->Vorname = $_POST['Vorname'];
         $this->Nachname = $_POST['Nachname'];
         $this->Geschlecht = $_POST['Geschlecht'];
         $this->Geburtsdatum = $_POST['Geburtsdatum'];
         $this->Plz = $_POST['Plz'];
-        $this->Strasse = $_POST['Strasse'];*/
-        //Aufruf der Methode innerhalb dieser Klasse
-		 
-               $Regestrieren = $this->model('Registrieren_Model');
-                $this->hinzufügen();
-                $this->view('Header',[]);
-                $this->view('Registrieren/Registrieren',[ $this->model('Registrieren_Model')]);
-                $this->view('Footer',[]);
+        $this->Strasse = $_POST['Strasse'];
         
-    }
-    //Methode zum Erzeugen eines Model Objekts und Übergabe der Parameter für die Datenbankanfrage
-    public function hinzufügen(){
-        
-        $liefer = new Registrieren_Model();
-        $liefer->hinzufügen($this->Email,$this->Passwort,$this->Vorname,$this->Nachname,$this->Geschlecht,$this->Geburtsdatum,
+        $Registrieren= $this->model('Registrieren_Model');
+        $Registrieren->hinzufuegen($this->Email,$this->Passwort,$this->Vorname,$this->Nachname,$this->Geschlecht,$this->Geburtsdatum,
                 $this->Plz,$this->Strasse);
+        
+
         
     }
 

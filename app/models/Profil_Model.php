@@ -6,7 +6,6 @@ Beschreibung: Der Kunde kann somit sein Profil bearbeiten und lÃ¶schen     -->
 
 
 <?php
-include_once '../config/Connect_Mysql.php';
 
 class Profil_Model {
 
@@ -27,7 +26,7 @@ class Profil_Model {
 		$this->connection = new Connect_Mysql();
 	}
 
-    // function das Profil anzeigen zu können
+    // function das Profil anzeigen zu kï¿½nnen
     public function laden($id) {
 		try
 		{
@@ -57,7 +56,7 @@ class Profil_Model {
 		}
     }
 
-    // function um ein Profil löschen zu können
+    // function um ein Profil lï¿½schen zu kï¿½nnen
     public function loeschen($id) {
 		try
 		{

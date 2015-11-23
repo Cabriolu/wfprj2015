@@ -7,7 +7,7 @@
  -->
 
  <!-- Formular um die eingelesenen Daten aus den Textfeldern mittels submit und action an den Controller zu übergeben -->
-<form action = '../controller/LieferAdresse_Controller.php' method ='post'>
+<form action = '/wfprj2015/public/LieferAdresse_Controller/hinzufügen' method ='post'>
 
         <input type="text" name ="name"><br>
 

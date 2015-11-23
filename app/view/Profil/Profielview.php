@@ -7,7 +7,7 @@
                                
                                 <li><a href="/wfprj2015/public/Profilcontroller">Mein Profil</a></li>
                                 <li><a href="/wfprj2015/public/MeineBestellungen_Controller">Bestellungen</a></li>
-                                <li><a href="#">Lieferadresse</a></li>
+                                <li><a href="/wfprj2015/public/LieferAdresse_Controller">Lieferadresse</a></li>
                                
                         </div>
                         </section>

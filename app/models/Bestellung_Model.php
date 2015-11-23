@@ -100,7 +100,7 @@ class Bestellung_Model {
 
         // Ausgabe
         while ($a < $total) {
-            echo $row['straße'] . ' <br>' . $row['plz'] . ' '.$row['ort'];
+            echo $row['straße'] . ' <br>' . $row['plz'] . ' ' . $row['ort'];
             $a++;
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         }

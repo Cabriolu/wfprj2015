@@ -5,7 +5,7 @@ require_once '../app/config/Connect_Mysql.php';
 class LoginController extends Controller {
 
     public function rufView(){
-        $this->view('LoginView');
+        $this->view('Login/LoginView');
     }
 
 
@@ -18,18 +18,22 @@ class LoginController extends Controller {
             $LogModel = $this->model('LoginModel');
             $check = $LogModel->login($emailAdresse,$pw);
             
-            if($check){
-                $this->view('main');
+            if($check && isset($_SESSION['logged'])){
+                if($_SESSION['logged']['admin'] == true){
+                    new backend();
+                }else{
+                    $this->view('main');
+                }
             }else{
                 echo 'Bitte geben Sie Mail und Passwort ein!';
-                $this->view('LoginView');
+                $this->view('Login/LoginView');
             }
             
         }
     }
     public function logout(){
         
-        $loginModel = $this->model('LoginModel');
+        $loginModel = $this->model('Login/LoginModel');
         $check = $loginModel->logout();
         
         if($check){

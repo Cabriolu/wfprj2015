@@ -8,6 +8,8 @@
 //Task: 90-1 (10315) Kategorien auswählen und programmieren
 //Aufwand: 5 Stunden
 //Beschreibung: Es wird das Model zum Produkt erstellt.
+
+
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 09.11.2015 Version 2
 //UserStory: Als Programmierer möchte ich den Aufbau als Model-View-Controller (MVC) haben.
 //Task: 140-2 (#10190) Eigenen Code an MVC anpassen

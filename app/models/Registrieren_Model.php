@@ -30,16 +30,17 @@ class Registrieren_Model{
         
     }
     //Methode zum Hinzufügen einer Lieferadresse anhand der $_POST- Parameter die vom View übergeben werden
-    public function hinzufügen($Email,$Passwort,$Vorname,$Nachname,$Geschlecht,$Geburtsdatum,$Plz,$Strasse){
+    public function hinzufuegen($Email,$Passwort,$Vorname,$Nachname,$Geschlecht,$Geburtsdatum,$Plz,$Strasse){
         
         
-        $this->sql ='INSERT INTO Kunde (Kundennummer,Vorname,Nachname,Geschlecht,Geburtsdatum,Rolle,EMail_email) '
-		. 'VALUES 	("null","' . $Vorname . '","' . $Nachname . '","' . $Geschlecht. '","'. $Geburtsdatum .'"'
-                . ',"0","' . $Email. '");'
-                . 'INSERT INTO Email (email, passwort)'
-                . 'VALUES       ("' . $Email. '","' . $Passwort. '");'
+        $this->sql ='INSERT INTO Email (email, passwort)'
+                . 'VALUES       (' . $Email. ',' . $Passwort. ');'
+                
+                . 'INSERT INTO Kunde (Vorname,Nachname,Geschlecht,Geburtsdatum,Rolle,EMail_email) '
+		. 'VALUES 	(' . $Vorname . ',' . $Nachname . ',' . $Geschlecht. ','. $Geburtsdatum .'
+                . '. 0 .',' . $Email. ');'
                 . 'INSERT INTO Adresse(Straße,Kunde_Kundennummer, Postleitzahl_PLZ)'
-                . 'VALUES       ("' . $Strasse. '","Last_insert_id()","' . $Plz. '");';
+                . 'VALUES       (' . $Strasse. ',"Last_insert_id()",' . $Plz. ');';
         $this->con->query($this->sql);
         $this->con = null;
         $this->closeDB();

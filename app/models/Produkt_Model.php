@@ -7,7 +7,7 @@
 //Task: 270-1 (#10329) Zusammenführen
 //Task: 90-1 (10315) Kategorien auswählen und programmieren
 //Aufwand: 5 Stunden
-//Beschreibung: Es wird das Model zum Produkt erstellt. 
+//Beschreibung: Es wird das Model zum Produkt erstellt.
 //Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 09.11.2015 Version 2
 //UserStory: Als Programmierer möchte ich den Aufbau als Model-View-Controller (MVC) haben.
 //Task: 140-2 (#10190) Eigenen Code an MVC anpassen
@@ -30,10 +30,10 @@ class Produkt_Model {
     }
 
     // function um ein Produkt anlegen zu können
-    // TODO
-    public function anlegen($name, $hersteller, $preis, $kategorie) {
-        $this->sql = 'insert into Produkt (Produktnummer, Name, Farbe, Groeße, Hersteller, Preis, SalePreis, Kategorie_KatID) '
-                . 'values (null, "' . $name . '", "' . $hersteller . '", ' . $preis . ',0.0 , "' . $kategorie . '");';
+    public function anlegen($name, $hersteller, $farbe, $groeße, $preis, $kategorie) {
+        $this->sql = 'insert into Produkt (Produktnummer, Name, Farbe, Groeße, Hersteller, Preis, SalePreis, Kategorie_katID) '
+                . 'values (null, "' . $name . '","' . $farbe . '","' . $groeße . '", "'
+                . $hersteller . '", ' . $preis . ',' . $preis . ' , "' . $kategorie . '");';
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
 
@@ -118,27 +118,20 @@ class Produkt_Model {
     // function um alle Produkte anzuzeigen
     public function alleProdukte() {
         // SQL-Abfrage zu allen Produkten eines speziellen Herstellers
-        $this->sql = 'Select Produktnummer, Name, Hersteller, alterPreis from produkt;';
+        $this->sql = 'Select p.Produktnummer, p.Name, p.Farbe, p.Groeße, p.Hersteller, '
+                . 'p.Preis, k.Kategorie, o.oberkat from Produkt p join Kategorie k '
+                . 'join Oberkategorie o where p.Kategorie_katID = k.katID '
+                . 'and k.Oberkategorie_OberkatID = o.OberkatID order by Produktnummer;';
 
         $this->con = new Connect_Mysql();
         $con = $this->con->verbinden();
 
         $stmt = $con->prepare($this->sql);
         $stmt->execute();
-        $total = $stmt->rowCount();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $a = 0;
-
-
-        while ($a < $total) {
-            echo '<tr> <td> ' . $row['Produktnummer'] . ' </td> <td>' . $row['Name']
-            . ' </td><td>' . $row['Hersteller'] . '</td><td>' . $row['alterPreis'] . '</td> </tr>';
-            $a++;
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        }
-        echo '</table>';
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $con = null;
         $this->con->schließen();
+        return $row;
     }
 
     function liste($kategorie) {

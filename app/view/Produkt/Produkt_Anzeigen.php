@@ -9,35 +9,35 @@ Beschreibung: Er wird hier eine Liste aller verfügbarer Produkte angezeigt, um 
     <br>
     <h2>Produkte löschen</h2>
     <div>
-        
+
         <table>
             <tr><td>Produktnummer</td><td>Name</td><td>Farbe</td><td>Größe</td><td>Hersteller</td><td>Preis</td><td>Kategorie</td><td>Oberkategorie</td></tr>
-        <?php
-        $a = 0;
-$total = sizeof($data);
+            <?php
+            $a = 0;
+            $total = sizeof($data);
 
-while ($a < $total) {
-    echo '<tr><td>'.$data[$a]['Produktnummer']
-            .'</td><td>'. $data[$a]['Name'] 
-            . '</td><td>'.$data[$a]['Farbe']
-            . '</td><td>'.$data[$a]['Groeße']
-            . '</td><td>'.$data[$a]['Hersteller']
-            . '</td><td>'.$data[$a]['Preis']
-            . '</td><td>'.$data[$a]['Kategorie']
-            .'</td><td>'.$data[$a]['oberkat'].'</td></tr>';
-    
-    $a++;
-}
-        ?>
- </table>       
+            while ($a < $total) {
+                echo '<tr><td>' . $data[$a]['Produktnummer']
+                . '</td><td>' . $data[$a]['Name']
+                . '</td><td>' . $data[$a]['Farbe']
+                . '</td><td>' . $data[$a]['Groeße']
+                . '</td><td>' . $data[$a]['Hersteller']
+                . '</td><td>' . $data[$a]['Preis']
+                . '</td><td>' . $data[$a]['Kategorie']
+                . '</td><td>' . $data[$a]['oberkat'] . '</td></tr>';
+
+                $a++;
+            }
+            ?>
+        </table>       
     </div>
     <div>
         <br>
         Geben Sie hier die Produktnummer des zu löschenden Produkts ein:
-    <form method="post">
-        Produktnummer: <input type="number" name="produktnr"><br>
-        <input type="submit" name="loeschen" value="Produkt löschen">
-    </form>
+        <form method="post">
+            Produktnummer: <input type="number" name="produktnr"><br>
+            <input type="submit" name="loeschen" value="Produkt löschen">
+        </form>
     </div>
 </main>
 

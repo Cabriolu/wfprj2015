@@ -8,7 +8,7 @@
 <?php
 
 //Zugriff auf die Datenbankverbindungsklasse
-include "../config/Connect_Mysql.php";
+
 
 class LieferAdresse_Model{
    

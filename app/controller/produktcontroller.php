@@ -58,8 +58,3 @@ class Produktcontroller {
     }
 
 }
-
-$handle = $_SERVER['REQUEST_URI'];
-$handle = explode('?', $handle);
-
-new Produktcontroller($handle[1]);

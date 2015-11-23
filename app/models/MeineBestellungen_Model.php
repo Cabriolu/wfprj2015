@@ -7,7 +7,7 @@
  -->
 <?php
 // Zugriff auf die Datenbankverbindungsklasse
-include "../config/Connect_Mysql.php";
+
 //include "../config/Login.php";
 
 class MeineBestellungen_Model{

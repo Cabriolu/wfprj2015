@@ -6,8 +6,8 @@
     Aufwand: 5 Stunden
  -->
 <?php
-require '../model/LieferAdresse_Model.php';
-class LieferAdresse_Controller{
+
+class LieferAdresse_Controller extends Controller{
 
     private $name;
     private $nname;
@@ -15,20 +15,25 @@ class LieferAdresse_Controller{
     private $plz;
     private $kid;
     // Zwischenspeichern der Daten aus dem View bei Erzeugung eines Controller Objekts
-    public function __construct(){
-       
-        $this->name = $_POST['name'];
-        $this->nname = $_POST['nname'];
-        $this->strasse = $_POST['strasse'];
-        $this->plz = $_POST['plz'];
-        $this->kid = $_POST['kid'];
+    public function index(){
+        
+        $this->view('Header',[]);
+        $this->view('Bestellung/LieferAdresse_View',[]);
+        $this->view('Footer',[]);
+        $this->model('LieferAdresse_Model');
+        
         //Aufruf der Methode innerhalb dieser Klasse
-		$this->hinzufügen(); 
+		
         
     }
     //Methode zum Erzeugen eines Model Objekts und Übergabe der Parameter für die Datenbankanfrage
     public function hinzufügen(){
         
+        $this->name = $_POST['name'];
+        $this->nname = $_POST['nname'];
+        $this->strasse = $_POST['strasse'];
+        $this->plz = $_POST['plz'];
+        $this->kid = $_POST['kid'];
         $liefer = new LieferAdresse_Model();
         $liefer->hinzufügen($this->name,$this->nname,$this->strasse,$this->plz,$this->kid);
         

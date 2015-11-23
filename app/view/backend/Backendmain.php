@@ -4,7 +4,7 @@
       <div class="row">
           <div class="col-md-2">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Produkt Anlegen <span class="sr-only">(aktuell)</span></a></li>
+            <li class="active"><a href="/wfprj2015/app/controller/Produktcontroller/anlegen">Produkt Anlegen <span class="sr-only">(aktuell)</span></a></li>
             <li><a href="#">Berichte</a></li>
             <li><a href="#">Analysen</a></li>
             <li><a href="#">Exportieren</a></li>

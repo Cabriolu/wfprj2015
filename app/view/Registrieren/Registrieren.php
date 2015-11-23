@@ -1,7 +1,7 @@
  <main>
      <p> <h3>Zum Registrieren, bitte das Formular ausfuellen. </h3> </p>
 		<!--mit post methode, die eingegebene Werte weiterleiten-->
-                <form action="/app/controller/Registrieren.php" method="post" >
+                <form action="/wfprj2015/public/Registrieren_Controller/Hinzufügen" method="post" >
                         <!-- Eingabefälder für das Formular-->
 			  <table border="0" cellpadding="0" cellspacing="4">
                                 <tr>
@@ -43,12 +43,7 @@
 					<td align="right">Strasse</td>
                                         <td><input class="tf" type="text" name="Strasse"  required="required" maxlength="45" value="Pritwitzstrasse"/><br></td>
 				</tr>	
-                                
-                                <tr>
-					<td align="right">Hausnummer</td>
-                                        <td><input class="tf" type="text" name="Hausnummer"  required="required" maxlength="45" value="1"/><br></td>
-				</tr>	
-				
+    		
 			</table>
 			<p>
 			<input type="submit" value="Registerieren">

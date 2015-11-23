@@ -6,10 +6,9 @@
 //Aufwand: 5 Stunden
 //Beschreibung: Es wird der grundlegende Aufbau der Bestellabwicklung als MVC erstellt.
 // Hier wird das Model dazu erstellt
-
 // include um die Klasse Connect_Mysql einzubinden
 include_once '../config/Connect_Mysql.php';
-
+require '../controller/mail.php';
 class Bestellung_Model {
 
     private $con;
@@ -91,16 +90,16 @@ class Bestellung_Model {
 
         // Ausgabe
         while ($a < $total) {
-            echo $row['straße'] . ' <br>' . $row['plz'] . ' '.$row['ort'];
+            echo $row['straße'] . ' <br>' . $row['plz'] . ' ' . $row['ort'];
             $a++;
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         }
-
     }
 
     // function um die Bestellung abzuschließen
     function bestellungabschließen() {
-        // Deki's mail mit rein
+        
+        new Mail();
         return 'Ihre Bestellung ist abgeschlossen! ';
     }
 

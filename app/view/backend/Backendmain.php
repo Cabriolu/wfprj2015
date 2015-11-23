@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-2">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><a href="/wfprj2015/app/controller/Produktcontroller/anlegen">Produkt Anlegen <span class="sr-only">(aktuell)</span></a></li>
+                    <li class="active"><a href="#">Produkt Anlegen <span class="sr-only">(aktuell)</span></a></li>
                     <li><a href="#">Berichte</a></li>
                     <li><a href="#">Analysen</a></li>
                     <li><a href="#">Exportieren</a></li>
@@ -28,13 +28,17 @@
                 <div class="row placeholders">
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generisches Platzhalter-Bild">
+                        <!-- Die folgenden Zeilen Codes sind von Marcel Riedl -->
                         <h4>Produkt anlegen</h4>
                         <span class="text-muted"><a href="../public/Produktcontroller">Neues Produkt anlegen</a></span>
+                    <!-- Marcel Riedl Ende -->
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generisches Platzhalter-Bild">
+                        <!-- Die folgenden Zeilen Codes sind von Marcel Riedl -->
                         <h4>Produkt Löschen</h4>
                         <span class="text-muted"><a href="../public/ProduktloeschenController">ein Produkt löschen</a></span>
+                    <!-- Marcel Riedl Ende -->
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generisches Platzhalter-Bild">

@@ -33,8 +33,8 @@ and open the template in the editor.
     <title>Fashion-Factory</title>
 
     <!-- Bootstrap -->
-    <link href="../public/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/sty.css">
+    <link href="/wfprj2015/public/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/wfprj2015/public/css/sty.css">
     <script src="../public/js/jquery-1.6.1.min.js"></script>
     <script src="../public/js/bootstrap.min.js"></script>
     <script src="../public/js/bootstrap.min_1.js"></script>
@@ -52,7 +52,7 @@ and open the template in the editor.
         <div class="container">
             <div class="navbar-header">
                  <a href="#" title="Zur startseite">
-                     <img src="../public/Grafiken/Logo.png" width="121" height="51" alt="Logo">
+                     <img src="/wfprj2015/public/Grafiken/Logo.png" width="121" height="51" alt="Logo">
                 </a>
                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                  <span class="sr-only">Navigation ein-/ausblenden</span>

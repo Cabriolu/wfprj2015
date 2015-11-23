@@ -103,8 +103,9 @@ and open the template in the editor.
             <li><a href="/wfprj2015/public/backend">Login</a></li>
             <li><a href="#">Profil</a></li>
             
-            <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Suchen...">
+            <form class="navbar-form navbar-right" action="/wfprj2015/public/Suche_Controller" method="post">
+            <input type="text" class="form-control" name="Suche" placeholder="Suchen...">
+            <input type="submit" value="Suche" method="post" >
             </form>
           </ul>
         </div><!--/.nav-collapse -->

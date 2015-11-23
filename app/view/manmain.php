@@ -70,7 +70,11 @@
                                 <li><a href="#">Exportieren</a></li>
                             </ul>
                             <ul class="nav nav-sidebar">
-                                <li><a href="">Nav-Eintrag</a></li>
+                                <input type="checkbox" name="filter[]" value="blau"/>blau<br>
+                                <input type="checkbox" name="filter[]" value="rot"/>rot<br>
+                                <input type="checkbox" name="filter[]" value="schwarz"/>schwarz<br>
+                                <input type="checkbox" name="filter[]" value="beige"/>beige<br>
+                                <input class="submit_farbe" type="submit" action="/wfprj2015/public/Filter_Controller" name="formSubmit" value="Filter" method="post"/>
                                 <li><a href="">Noch ein Nav-Eintrag</a></li>
                                 <li><a href="">Und noch einer</a></li>
                                 <li><a href="">Anderer Nav-Eintrag</a></li>

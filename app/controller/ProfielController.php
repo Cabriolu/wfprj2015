@@ -8,9 +8,9 @@ class ProfielController extends Controller{
         $user = $this->model('User');
         $user->name = $name;
        //home index view
-        $this->view('Header',['name'=> $user->name]);
-        $this->view('Profil/Profielview',['name'=> $user->name]);
-        $this->view('Footer',['name'=> $user->name]);
+        $this->view('Header',[]);
+        $this->view('Profil/Profielview',[]);
+        $this->view('Footer',[]);
     }
 }
 

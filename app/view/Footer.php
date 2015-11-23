@@ -11,7 +11,7 @@
         <div class="col-md-3">
           <ul class="nav nav-sidebar">
             <li><a href="/wfprj2015/public/Impressum">Impressum</a></li>
-            <li><a href="#">Sendungsverfolgung</a></li>
+            <li><a href="/wfprj2015/public/AGB_Controller">AGB</a></li>
             <li><a href="#">Rücksendung</a></li>
           </ul>
         </div>

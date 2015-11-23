@@ -20,6 +20,7 @@ class LoginController extends Controller {
             
             if($check && isset($_SESSION['logged'])){
                 if($_SESSION['logged']['admin'] == true){
+                    require '/wfprj2015/app/controller/man';
                     new backend();
                 }else{
                     $this->view('main');

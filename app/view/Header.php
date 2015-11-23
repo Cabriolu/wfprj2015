@@ -100,7 +100,7 @@ and open the template in the editor.
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/wfprj2015/public/WarenkorbController/getArtikel">Warenkorb</a></li>
             <li><a href='/wfprj2015/public/Registrieren_Controller'>Registrieren</a></li>
-            <li><a href="/wfprj2015/public/backend">Login</a></li>
+            <li><a href="/wfprj2015/public/LoginController/rufView">Login</a></li>
             <li><a href="/wfprj2015/public/Profielcontroller">Profil</a></li>
             
             <form class="navbar-form navbar-right">

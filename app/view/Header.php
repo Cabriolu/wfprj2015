@@ -66,32 +66,38 @@ and open the template in the editor.
                  <li class="dropdown">
                  <a href="../app/view/manview.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herren <span class="caret"></span></a>
                  <ul class="dropdown-menu">
+                     <!-- Die folgenden Links sind von Marcel Riedl -->
                     <li><a href="/wfprj2015/public/ProduktlisteController/7">Jacken</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/8">Oberbekleidung</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/9">Hosen</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/10">Unterwäsche</a></li>
                     <li><a href="/wfprj2015/public/man">Accessoires</a></li>
+                    <!-- Marcel Riedl Ende -->
                 </ul>
                 </li>
                    <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Damen <span class="caret"></span></a>
                  <ul class="dropdown-menu">
+                    <!-- Die folgenden Links sind von Marcel Riedl -->
                     <li><a href="/wfprj2015/public/ProduktlisteController/1">Jacken</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/2">Oberbekleidung</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/3">Hosen</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/4">Unterwäsche</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/5">Accessoires</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/6">Röcke</a></li>
+                    <!-- Marcel Riedl Ende -->
                 </ul>
                 </li>
                  <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kinder <span class="caret"></span></a>
                  <ul class="dropdown-menu">
-                    <li><a href="/wfprj2015/public/ProduktlisteController/12">Jacken</a></li>
+                    <!-- Die folgenden Links sind von Marcel Riedl -->
+                     <li><a href="/wfprj2015/public/ProduktlisteController/12">Jacken</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/13">Oberbekleidung</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/14">Hosen</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/15">Unterwäsche</a></li>
                     <li><a href="/wfprj2015/public/ProduktlisteController/16">Accessoires</a></li>
+                    <!-- Marcel Riedl Ende -->
                 </ul>
                 </li>
                 <li><a href="/wfprj2015/public/ProduktlisteController/17">Sale</a></li>

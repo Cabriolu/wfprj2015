@@ -10,8 +10,8 @@ Beschreibung: Der Kunde kann somit sein Profil bearbeiten und löschen     -->
 
 session_start();
 
-require_once('../core/Controller.php');
-require_once('../model/Profil_Model.php');
+
+
 
 class ProfilContoller extends Controller
 {
@@ -26,7 +26,8 @@ class ProfilContoller extends Controller
 	protected $profil;
 	
     function __construct($handle) {
-
+        
+        $this->model('Profil_Model');
         $this->profil = new Profil_Model();
 		
 		//Maybe TODO

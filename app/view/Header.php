@@ -66,32 +66,43 @@ and open the template in the editor.
                  <li class="dropdown">
                  <a href="../app/view/manview.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herren <span class="caret"></span></a>
                  <ul class="dropdown-menu">
-                     <li><a href="/wfprj/public/man">Sale</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Hemden</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Jacken&Mäntel</li>
-                    <li><a href="#">T-Shirts</a></li>
-                    <li><a href="#">Anzüge</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/7">Jacken</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/8">Oberbekleidung</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/9">Hosen</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/10">Unterwäsche</a></li>
+                    <li><a href="/wfprj2015/public/man">Accessoires</a></li>
                 </ul>
                 </li>
                    <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Damen <span class="caret"></span></a>
                  <ul class="dropdown-menu">
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Kleider</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Jacken&Mäntel</li>
-                    <li><a href="#">Blusen</a></li>
-                    <li><a href="#">Röcke</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/1">Jacken</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/2">Oberbekleidung</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/3">Hosen</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/4">Unterwäsche</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/5">Accessoires</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/6">Röcke</a></li>
                 </ul>
                 </li>
+                 <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kinder <span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                    <li><a href="/wfprj2015/public/ProduktlisteController/12">Jacken</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/13">Oberbekleidung</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/14">Hosen</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/15">Unterwäsche</a></li>
+                    <li><a href="/wfprj2015/public/ProduktlisteController/16">Accessoires</a></li>
+                </ul>
+                </li>
+                <li><a href="/wfprj2015/public/ProduktlisteController/17">Sale</a></li>
+                
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Warenkorb</a></li>
-            <li><a href='/wfprj/public/Registrieren'>Registrieren</a></li>
-            <li><a href="/wfprj/public/backend">Login</a></li>
+            <li><a href="/wfprj2015/public/WarenkorbController/getArtikel">Warenkorb</a></li>
+            <li><a href='/wfprj2015/public/Registrieren_Controller'>Registrieren</a></li>
+            <li><a href="/wfprj2015/public/backend">Login</a></li>
+            <li><a href="/wfprj2015/public/Profielcontroller">Profil</a></li>
+            
             <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Suchen...">
             </form>

@@ -1,0 +1,78 @@
+<!-- 
+-- Meryem Güler, 3107546
+-- Group #4 Onlineshop
+-- Sprint 3, Task : (230-1) #10323
+-- User Story: Als Kunde möchte ich über ein Kontaktformular mit den OnlineShop-betreibern in Verbindung kommen.
+-- Task: Kontaktformular programmieren
+-- dynamische Formularfelder mit Voreintragungen wie "value="<?php echo htmlspecialchars($email); ?>", um den Kunden das mehrfache Eintragen zu ersparen, falls 
+-- er/sie beim absenden des Formulars ein Feld vergisst, muss er es nicht nochmal befüllen
+-- Aufwand : 10 Stunden
+ -->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+
+<head>
+    <title>Kontakt</title>
+
+    <link href="style.css" type="text/css" rel="stylesheet" />
+	
+</head>
+
+<body>
+
+ <div>
+<form  method="post" action='Kontakt_Controller.php'>
+<h2 class="topic">Kontaktformular</h2>
+<table>
+	<tr>
+		<td class="alt" width="35%">E-Mail:*</td>
+		<td class="alt" width="65%"><input type="email" name="email" maxlength="100" required="required" placeholder="Email" id="email" value="<?php echo htmlspecialchars($email); ?>" /></td>
+	</tr>
+	<tr>
+		<td class="alt">Vorname:*</td>
+		<td class="alt"><input type="text" name="vorname" maxlength="50" required="required"  placeholder="Vorname" value="<?php echo htmlspecialchars($vorname); ?>"/> </td>
+	</tr>
+	<tr>
+		<td class="alt">Nachname:*</td>
+		<td class="alt"><input type="text" name="nachname" maxlength="50" required="required" placeholder="Nachname" value="<?php echo htmlspecialchars($nachname); ?>"/> </td>
+	</tr>
+	<tr>
+		<td class="alt">Betreff:*</td>
+		<td class="alt">
+			<select name="betreff" id="subject"><option value="misc">Allgemeines</option>
+				<option value="service">Fragen zur Bestellung/Lieferung</option>
+				<option value="marketing">Marketing</option>
+				<option value="quoterequest">Preis- und Sortimentsanfrage</option>
+				<option value="qualitymanagement">Qualit&auml;tsmanagement</option>
+				<option value="privacy">Datenschutz</option>
+				<option value="complaint">Reklamation</option></select>
+		</td>
+	</tr>
+	<tr>
+		<td class="alt top">Ihre Frage:*</td>
+		<td class="alt">
+			<textarea name="kommentar" cols="50" rows="6" required="required" placeholder="Ihre Anfrage"  value="<?php echo htmlspecialchars($kommentar); ?>"/> </textarea>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>&nbsp;</td>
+		<td class="buttons">
+		<?php date_default_timezone_set("Europe/Berlin"); //Erzeugung des Datums beim Absenden des Formulars
+         $datum= date("Y.m.d"); ?>
+		
+			<input type="hidden" name="datum" value="<?php echo($datum); ?>"/>
+			<input type="submit" value="Anfrage senden" class="submitbutton" />
+		</td>
+	
+</table>
+
+
+
+</form>
+</div>
+
+</body>
+</html>

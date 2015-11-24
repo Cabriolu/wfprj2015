@@ -108,7 +108,6 @@ class Bestellung_Model {
             $a++;
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         }
-
     }
 
     // function um die Bestellung abzuschließen --> Speicherung in Table Bestellung und Bestellliste sowie berechnung von

@@ -9,14 +9,14 @@
 // von Kerstin Gräter
 require_once '../app/config/Connect_Mysql.php';
 
-class ProduktlisteController extends Controller {
+class ProduktansichtController extends Controller {
 
     function index($produktnummer) {
         $produktliste = $this->model('Produkt_Model');
-        $produktliste->egal = '';
+        $rezen = '';
         //home index view
         $this->view('Header', ['view' => $produktliste->egal]);
-        $this->view('Produkt/Produktansicht', ['view' => $produktliste->produktansicht($produktnummer)]);
+        $this->view('Produkt/Produktansicht', ['data' => $produktliste->produktansicht($produktnummer)]);
         $this->view('Footer', ['view' => $produktliste->egal]);
         
         if(isset($_POST['tabelle'])){

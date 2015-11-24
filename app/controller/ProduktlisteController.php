@@ -16,7 +16,7 @@ class ProduktlisteController extends Controller {
         $produktliste->egal = '';
         //home index view
         $this->view('Header', ['view' => $produktliste->egal]);
-        $this->view('Produkt/Produktliste', ['view' => $produktliste->ansicht($kategorie)]);
+        $this->view('Produkt/Produktliste', $produktliste->liste($kategorie));
         $this->view('Footer', ['view' => $produktliste->egal]);
     }
 

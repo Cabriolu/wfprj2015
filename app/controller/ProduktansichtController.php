@@ -18,6 +18,11 @@ class ProduktlisteController extends Controller {
         $this->view('Header', ['view' => $produktliste->egal]);
         $this->view('Produkt/Produktansicht', ['view' => $produktliste->produktansicht($produktnummer)]);
         $this->view('Footer', ['view' => $produktliste->egal]);
+        
+        if(isset($_POST['tabelle'])){
+            require_once '../app/view/Produkt/GroessentabelleDamen.php';
+        }
+        
     }
 
 }

@@ -9,17 +9,17 @@ Beschreibung: Der Kunde kann somit sein Profil bearbeiten und löschen     -->
 
 class Profil_Model {
 
-/*
-	protected $id;
-	protected $vorname
-    protected $name;
-	protected $geschlecht;
-	protected $geburtstag
-    protected $strasse;
-    protected $plz;
-	protected $ort;
-	protected $tele;
-*/
+	public $id;
+        public $email;
+	public $vorname;
+        public $name;
+	public $geschlecht;
+	public $geburtstag;
+        public $strasse;
+        public $plz;
+	public $ort;
+	public $tele;
+        
 	protected $connection;
 
 	public function __construct() {
@@ -41,12 +41,48 @@ class Profil_Model {
 			
 			if($row = $stmt->fetch())
 			{
-				$this->connection->schliessen();
+				$this->connection->schließen();
 				return $row;
 			}
 			else
 			{
-				$this->connection->schliessen();
+				$this->connection->schließen();
+				return null;
+			}
+		}
+		catch(PDOException $e)
+		{
+			print '<pre>'.$e.'</pre>';
+		}
+    }
+    
+    public function findByEmail($email) {
+		try
+		{
+			$db = $this->connection->verbinden();
+			$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			
+			$sql = 'SELECT * FROM kunde left join adresse ON Kundennummer = Kunde_Kundennummer 
+										left join postleitzahl ON Postleitzahl_PLZ = PLZ 
+											where EMail_email = :email;';
+                        
+			$stmt = $db->prepare($sql);
+                        $stmt->execute(array('email' => $email));
+			$stmt->setFetchMode(PDO::FETCH_ASSOC);
+			
+			if($row = $stmt->fetch())
+			{
+				$this->connection->schließen();
+                                $profil = new Profil_Model();
+                                $profil->id = $row['Kundennummer'];
+                                $profil->name = $row['Nachname'];
+                                $profil->vorname = $row['Vorname'];
+                                $profil->email = $row['EMail_email'];
+				return $profil;
+			}
+			else
+			{
+				$this->connection->schließen();
 				return null;
 			}
 		}
@@ -76,7 +112,7 @@ class Profil_Model {
 			$stmt = $db->prepare($sql);
 			$stmt->execute();
 		 
-			$this->connection->schliessen();
+			$this->connection->schließen();
 		}
 		catch(PDOException $e)
 		{
@@ -106,7 +142,7 @@ class Profil_Model {
 			$stmt = $db->prepare($sql);
 			$stmt->execute();
 		 
-			$this->connection->schliessen();
+			$this->connection->schließen();
 		}
 		catch(PDOException $e)
 		{

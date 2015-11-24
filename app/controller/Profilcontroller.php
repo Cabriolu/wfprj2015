@@ -10,10 +10,7 @@ Beschreibung: Der Kunde kann somit sein Profil bearbeiten und löschen     -->
 
 session_start();
 
-
-
-
-class ProfilContoller extends Controller
+class Profilcontoller extends Controller
 {
 	protected $id;
 	protected $vorname;
@@ -29,50 +26,62 @@ class ProfilContoller extends Controller
         
         $this->model('Profil_Model');
         $this->profil = new Profil_Model();
-		
-		//Maybe TODO
-		if(isset($_GET['id']))
-		$this->id = $_GET['id'];
-		if(isset($_POST['id']))
-		$this->id = $_POST['id'];
-		$this->vorname = $_POST['vorname'];
-		$this->name = $_POST['nachname'];
-		$this->strasse = $_POST['strasse'];
-		$this->geschlecht = $_POST['geschlecht'];
-		$this->geburtstag = $_POST['geburtstag'];
-		$this->plz = $_POST['plz'];
-		$this->ort = $_POST['ort'];
-		//$this->tele = $_POST['tele'];
+        
+        //Maybe TODO
+	if(isset($_GET['id']))
+	$this->id = $_GET['id'];
+	if(isset($_POST['id']))
+	$this->id = $_POST['id'];
+        
+        if(isset($_POST['vorname']))
+	$this->vorname = $_POST['vorname'];
+        if(isset($_POST['nachname']))
+	$this->name = $_POST['nachname'];
+        if(isset($_POST['strasse']))
+	$this->strasse = $_POST['strasse'];
+        if(isset($_POST['geschlecht']))
+	$this->geschlecht = $_POST['geschlecht'];
+        if(isset($_POST['geburtstag']))
+	$this->geburtstag = $_POST['geburtstag'];
+        if(isset($_POST['plz']))
+	$this->plz = $_POST['plz'];
+        if(isset($_POST['ort']))
+	$this->ort = $_POST['ort'];
+	//$this->tele = $_POST['tele'];
 
         switch ($handle) {
             case 'anzeigen':
                 $this->anzeigen($this->id);
                 break;
-			case 'bearbeiten':
-				$this->bearbeiten($this->id);
-				break;
+            case 'bearbeiten':
+		$this->bearbeiten($this->id);
+		break;
             case 'loeschen':
                 $this->profil->loeschen($this->id);
                 break;
             case 'aktualisieren';
                 $this->profil->aktualisieren($this->id, $this->vorname, $this->name, $this->geschlecht, $this->geburtstag, $this->strasse, $this->plz, $this->ort);
-				$this->anzeigen($this->id);
+                $this->anzeigen($this->id);
                 break;
 
             default:
-				$this->anzeigen($this->id);
+		$this->anzeigen($this->id);
                 break;
         }
     }
 	
 	    // function um Profil view anzeigen
     public function anzeigen($id) {
-        include_once '../view/Profil/Profil_Anzeigen.php';
+        $this->view('Header',[]);
+        $this->view('Profil/Profil_Anzeigen', [ $this->model('Profil_Model') ]);
+        $this->view('Footer',[]);
     }
 
     // Funktion um die Profilbearbeiten view anzuzeigen
     public function bearbeiten() {
-        include_once '../view/Profil/Profil_Bearbeiten.php';
+        $this->view('Header',[]);
+        $this->view('Profil/Profil_Bearbeiten', [ $this->model('Profil_Model') ]);
+        $this->view('Footer',[]);
     }
 
 }
@@ -83,6 +92,6 @@ if(isset($_POST['han']))
 	$han = $_POST['han'];
 }
 
-new ProfilContoller($han);
+new Profilcontoller($han);
 
 ?>

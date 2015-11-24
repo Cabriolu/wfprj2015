@@ -1,6 +1,4 @@
-
 <?php
-
 
 class ProfielController extends Controller{
     
@@ -14,5 +12,4 @@ class ProfielController extends Controller{
     }
 }
 
-
-
+?>

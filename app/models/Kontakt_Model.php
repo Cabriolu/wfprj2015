@@ -1,8 +1,8 @@
 <!--
--- Meryem Güler, 3107546
+-- Meryem Gï¿½ler, 3107546
 -- Group #4 Onlineshop
 -- Sprint 3, Task : (230-1) #10323 Version 1
--- User Story: Als Kunde möchte ich über ein Kontaktformular mit den OnlineShop-betreibern in Verbindung kommen.
+-- User Story: Als Kunde mï¿½chte ich ï¿½ber ein Kontaktformular mit den OnlineShop-betreibern in Verbindung kommen.
 -- Task: Kontaktformular programmieren
 -- Aufwand : 10 Stunden
  -->
@@ -35,8 +35,8 @@ class Kontakt_Model{
     }
         
     }
-    //Methode zum Hinzufügen einer Nachricht anhand der $_POST- Parameter die vom View übergeben werden
-    public function hinzufügen($datum,$vorname,$nachname,$email,$betreff,$kommentar){
+    //Methode zum Hinzufï¿½gen einer Nachricht anhand der $_POST- Parameter die vom View ï¿½bergeben werden
+    public function hinzufuegen($datum,$vorname,$nachname,$email,$betreff,$kommentar){
         
         
         $this->sql ='INSERT INTO Kontakt(Datum,Vorname,Nachname,Email,Betreff,Nachricht) '
@@ -49,7 +49,7 @@ class Kontakt_Model{
     }
     // Methode um die Datenbankverbindung zu trennen
     public function closeDB(){
-        $this->db->schließen();
+        $this->db->schlieÃŸen();
         $this->con = 0;
     }
     

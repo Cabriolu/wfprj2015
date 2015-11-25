@@ -1,8 +1,8 @@
 <!--
--- Meryem Güler, 3107546
+-- Meryem Gï¿½ler, 3107546
 -- Group #4 Onlineshop
 -- Sprint 3, Task : (230-1) #10323
--- User Story: Als Kunde möchte ich über ein Kontaktformular mit den OnlineShop-betreibern in Verbindung kommen.
+-- User Story: Als Kunde mï¿½chte ich ï¿½ber ein Kontaktformular mit den OnlineShop-betreibern in Verbindung kommen.
 -- Task: Kontaktformular programmieren
 -- Aufwand : 10 Stunden
  -->
@@ -32,14 +32,14 @@ class Kontakt_Controller extends Controller{
         $this->betreff = $_POST['betreff'];
         $this->kommentar = $_POST['kommentar'];
         //Aufruf der Methode innerhalb dieser Klasse
-		$this->hinzufügen(); 
+		$this->hinzufuegen(); 
         
     }
-    //Methode zum Erzeugen eines Model Objekts und Übergabe der Parameter für die Datenbankanfrage
-    public function hinzufügen(){
+    //Methode zum Erzeugen eines Model Objekts und ï¿½bergabe der Parameter fï¿½r die Datenbankanfrage
+    public function hinzufuegen(){
         
         $kontakt = new Kontakt_Model();
-        $kontakt->hinzufügen($this->datum, $this->name,$this->nachname,$this->email,$this->betreff,$this->kommentar);
+        $kontakt->hinzufuegen($this->datum, $this->name,$this->nachname,$this->email,$this->betreff,$this->kommentar);
         
     }
 

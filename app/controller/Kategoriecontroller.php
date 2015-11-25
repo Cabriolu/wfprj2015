@@ -4,29 +4,17 @@
 //Verfasser: Marcel Riedl, Datum: 19.11.2015 Version 1
 //UserStory: #90 Als Kunde möchte ich eine einfache Navigation in Kategorien, so dass ich schnell mein Wunschprodukt finden kann.
 //Task: #90-1 (10315) Kategorien auswählen und programmieren
-//Aufwand:  Stunden
+//Aufwand: 0,5 Stunden
 //Beschreibung: Es wird der Controller für die Kategorien erstellt. 
 
-require_once '../models/Kategorie_Model.php';
-require_once '../models/Produkt_Model.php';
+class Kategoriecontroller extends Controller {
 
-class Kategoriecontroller {
-
-    function __construct() {
+    function index($kat) {
+        $kategorie = $this->model('Kategorie_Model');
         
+        $this->view('Header');
+        $this->view('Kategorie/Kategorie_View', [$kategorie->kategorieanzeigen($kat)]);
+        $this->view('Footer');
     }
     
-    // Anzeige des Views aller Kategorien
-    function liste(){
-        $kategorie = new Kategorie_Model();
-        $kategorie->kategorienanzeigen();
-    }
-    
-    // function um die gewählte Kategorie herauszufinden
-    function kategorieproduktanzeigen($kat){
-        $produkt = new Produkt_Model();
-        $produkt->produktliste($kat);
-    }
 }
-
-new Kategoriecontroller();

@@ -5,19 +5,20 @@
     Task: Eigenen Code an MVC anpassen
     Aufwand: 5 Stunden
  -->
+ <!-- Ridvan Atacan, 3113837
+    24.11.2015 Group #4 Onlineshop
+    Sprint 3, Task : 270-6 #10334
+    User Story: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
+    Task: Zusammenführen
+    Aufwand: 5 Stunden
+ -->
 <?php
 
-//Zugriff auf die Datenbankverbindungsklasse
+
 
 
 class LieferAdresse_Model{
-   
-   private $sql; 
-   private $name;
-   private $nname;
-   private $strasse;
-   private $plz;
-   private $kid;
+ 
     //Datenbankverbindung versuchen aufzubauen sobald ein Objekt der Klasse erzeugt wird
     public function __construct(){
         
@@ -36,13 +37,14 @@ class LieferAdresse_Model{
     public function hinzufügen($name,$nname,$strasse,$plz,$kid){
         
         
-        $this->sql ='INSERT INTO Lieferadresse(Vorname,Nachname,Straße,Postleitzahl_PLZ,Kunde_Kundennummer) '
-		. 'VALUES 	("'. $name .'","' . $nname . '","' . $strasse . '","' . $plz. '","'. $kid .'");';
+        $this->sql ='INSERT INTO Lieferadresse(LieferID,Vorname,Nachname,Straße,Postleitzahl_PLZ,Kunde_Kundennummer) '
+		. 'VALUES 	(null,"'. $name .'","' . $nname . '","' . $strasse . '",' . $plz. ','. $kid .');';
+        
         $this->con->query($this->sql);
         $this->con = null;
         $this->closeDB();
-         
-        echo "Die neue Lieferadresse wurde angelegt!";
+        
+        echo "Die neue Lieferadresse wurde angelegt!</main>";
     }
     // Methode um die Datenbankverbindung zu trennen
     public function closeDB(){

@@ -5,7 +5,15 @@
     Task: Alte Bestellungen anzeigen
     Aufwand: 10 Stunden
  -->
+ <!-- Ridvan Atacan, 3113837
+    24.11.2015 Group #4 Onlineshop
+    Sprint 3, Task : 270-6 #10334
+    User Story: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
+    Task: Zusammenführen
+    Aufwand: 5 Stunden
+ -->
 <?php
+require '../app/view/Header.php';
 // Zugriff auf die Datenbankverbindungsklasse
 
 //include "../config/Login.php";
@@ -14,14 +22,12 @@ class MeineBestellungen_Model{
 		
     private $con;
     private $bestellnummer;
-    private $datum;
     private $gesamtpreis;
-    private $menge;
     private $data;
     private $db;
     private $sql;
     private $result;
-    
+    private $count;
     //Datenbankverbindung versuchen aufzubauen sobald ein Objekt der Klasse erzeugt wird
     public function __construct(){
        
@@ -57,15 +63,15 @@ class MeineBestellungen_Model{
      public function alleBestellungen(){
         
 		//Zugriff auf die Tabellen auf der Datenbank mittels SQL Statements und PDO		
-        echo'<br><strong>Alle Bestellungen</br></strong>';
-        $query = "SELECT Bestellnummer,Gesamtpreis,Menge,Datum FROM Bestellung WHERE Kunde_Kundennummer = 5" ;
+        echo'<br><main><strong>Alle Bestellungen</br></strong>';
+        $query = "SELECT bestellnummer,Gesamtpreis,Datum FROM Bestellung WHERE Kunde_Kundennummer = 5" ;
         $this->sql = $this->con->prepare($query);
-        $this->sql->execute();
-        $this->result = $this->sql->fetch(PDO::FETCH_ASSOC);
+        $this->data = $this->sql->execute();
+        $this->result = $this->sql->fetchAll(PDO::FETCH_ASSOC);
         $this->count = $this->sql->rowCount();
         
 		//Abfrage, ob dem jeweiligen Kunden eine Bestellung vorliegt
-         if(empty($this->result)){
+        if(empty($this->result)){
             
             echo"Sie haben noch keine Bestellungen:<br> ";
              
@@ -75,7 +81,7 @@ class MeineBestellungen_Model{
             . "Bestellungen : " .$this->count ."<br>";
         }
         
-        $i = 0;
+       /* $i = 0;
 		// Wenn mehrere Zeilen von der Datenbank gelesen werden, diese durchgehen und Zeile für Zeile ausgeben
         while ($i < $this->count){
             echo"<br><fieldset>";
@@ -94,32 +100,20 @@ class MeineBestellungen_Model{
         $this->gesamtpreis = $this->result['Gesamtpreis'];
         
         echo "</table>";
-        
-        
+        */
+        return $this->result;
         $this->closeDB();
      }        
         
     public function prnt(){
         print $this->bestellnummer;
+        return $this->count;
+        
     }
 	//Methode um die Datenbankverbindung zu trennen
     public function closeDB(){
        $this->db->schließen();
        $this->con = 0;
    }
-   
-   public function getPreis(){
-       
-       return $this->gesamtpreis;
-   }
-   
-   public function getRow(){
-        
-      return $this->count;
-   }
-        
+    
 }
-/*obj = new MeineBestellungen_Model();
-$obj->prnt();
-$obj->bestellliste();
-*/

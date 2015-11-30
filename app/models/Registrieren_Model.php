@@ -1,7 +1,11 @@
-
+<!-- Renato Cabriolu, 3112468
+    23.11.2015 Group #4 Onlineshop
+    Sprint 3, Task : 270-1
+    User Story: Als Kunde möchte ich in den Wichtigsten Funktionen ein Fertiges Ergebnis sehen. 
+    Task: Eigener Code anpassen
+    Aufwand: 4 Stunden
+ -->
 <?php
-
-//Zugriff auf die Datenbankverbindungsklasse
 
 
 class Registrieren_Model{
@@ -29,23 +33,19 @@ class Registrieren_Model{
     }
         
     }
-    //Methode zum Hinzufügen einer Lieferadresse anhand der $_POST- Parameter die vom View übergeben werden
+    //Methode zum Registrieren eines Kunden anhand der $_POST- Parameter die vom View übergeben werden
     public function hinzufuegen($Email,$Passwort,$Vorname,$Nachname,$Geschlecht,$Geburtsdatum,$Plz,$Strasse){
         
         
-        $this->sql ='INSERT INTO Email (email, passwort)'
-                . 'VALUES       (' . $Email. ',' . $Passwort. ');'
-                
-                . 'INSERT INTO Kunde (Vorname,Nachname,Geschlecht,Geburtsdatum,Rolle,EMail_email) '
-		. 'VALUES 	(' . $Vorname . ',' . $Nachname . ',' . $Geschlecht. ','. $Geburtsdatum .'
-                . '. 0 .',' . $Email. ');'
-                . 'INSERT INTO Adresse(Straße,Kunde_Kundennummer, Postleitzahl_PLZ)'
-                . 'VALUES       (' . $Strasse. ',"Last_insert_id()",' . $Plz. ');';
+        $this->sql ="insert into Email (Email, Passwort)values ('$Email', '$Passwort'); insert into Kunde (Kundennummer, Vorname, Nachname, Geschlecht, Geburtsdatum, Rolle, EMail_email)
+                    values ('Null','$Vorname', '$Nachname', '$Geschlecht', '$Geburtsdatum','0','$Email'); insert into Adresse (Straße,Kunde_Kundennummer,Postleitzahl_PLZ) values ($Strasse', 'Last_insert_id()','$Plz');";
+                    
+       
+        
+        echo 'Sie wurden erfolgreich registriert!!!';
         $this->con->query($this->sql);
         $this->con = null;
         $this->closeDB();
-         
-        echo "Sie wurden Registriert!";
     }
     // Methode um die Datenbankverbindung zu trennen
     public function closeDB(){

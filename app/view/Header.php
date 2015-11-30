@@ -71,7 +71,7 @@ and open the template in the editor.
                                     <li><a href="../public/ProduktlisteController/8">Oberbekleidung</a></li>
                                     <li><a href="../public/ProduktlisteController/9">Hosen</a></li>
                                     <li><a href="../public/ProduktlisteController/10">Unterwäsche</a></li>
-                                    <li><a href="../public/man">Accessoires</a></li>
+                                    <li><a href="../public/ProduktlisteController/11">Accessoires</a></li>
                                     <!-- Marcel Riedl Ende -->
                                 </ul>
                             </li>

@@ -13,7 +13,7 @@ class Kategoriecontroller extends Controller {
         $kategorie = $this->model('Kategorie_Model');
         
         $this->view('Header');
-        $this->view('Kategorie/Kategorie_View', [$kategorie->kategorieanzeigen($kat)]);
+        $this->view('Kategorie/Kategorie_View', $kategorie->kategorienanzeigen($kat));
         $this->view('Footer');
     }
     

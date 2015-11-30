@@ -7,7 +7,7 @@
 //Aufwand: 1,5 Stunden
 //Beschreibung: Es wird das Model für die Kategorien erstellt. 
 // Kerstin Gräter
-require_once '../config/Connect_Mysql.php';
+require_once '../app/config/Connect_Mysql.php';
 
 class Kategorie_Model {
 

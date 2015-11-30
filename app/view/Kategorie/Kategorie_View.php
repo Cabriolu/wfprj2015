@@ -18,7 +18,7 @@
 
     // Schreiben der Kategoruen mit Link
     while ($a < $total) {
-        echo '<div><a href="../public/ProduktlisteController/' . $row[$a]['KatID'] . '">' . $row[$a]['Kategorie'] . '</a></div><br>';
+        echo '<div><a href="../public/ProduktlisteController/' . $data[$a]['KatID'] . '">' . $data[$a]['Kategorie'] . '</a></div><br>';
         $a++;
     }
     ?>

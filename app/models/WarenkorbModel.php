@@ -34,7 +34,7 @@ class WarenkorbModel {
 
     public function closeDB() {
 
-        $this->con->null;
+        
         $this->db = null;
     }
 

@@ -40,9 +40,13 @@ Zeitaufwand: 8 Stunden-->
         ?>
     </div>
     <form method="post">
-        <input type="hidden" name="add" value="<?php echo $id = $data[$a - 1]['Produktnummer'] ?>">
-        <input type="submit" value="In den Warenkorb" href="../WarenkorbAnzeigen.php/anzeigen">
+        <input type="hidden" name="add" value="<?php echo $id = $data['data']['Produktnummer'] ?>">
+        <input type="submit" value="In den Warenkorb">
     </form>
+    <?php echo $id; if(isset($_SESSION['warenkorb'])){
+        var_dump($_SESSION['warenkorb']);
+    } ?>
+    
     <form method="POST">
         <input type="submit" value="Sofortkaufen">
     </form>

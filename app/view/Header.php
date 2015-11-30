@@ -33,8 +33,8 @@ and open the template in the editor.
         <title>Fashion-Factory</title>
 
         <!-- Bootstrap -->
-        <link href="/WIFprojekt/public/css/bootstrap.css" rel="stylesheet">
-        <link rel="stylesheet" href="/WIFprojekt/public/css/sty.css">
+        <link href="/wfprj2015/public/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="/wfprj2015/public/css/sty.css">
         <script src="../public/js/jquery-1.6.1.min.js"></script>
         <script src="../public/js/bootstrap.min.js"></script>
         <script src="../public/js/bootstrap.min_1.js"></script>
@@ -52,7 +52,7 @@ and open the template in the editor.
                 <div class="container">
                     <div class="navbar-header">
                         <a href="../public/home" title="Zur startseite">
-                            <img src="/WIFprojekt/public/Grafiken/Logo.png" width="121" height="51" alt="Logo">
+                            <img src="/wfprj2015/public/Grafiken/Logo.png" width="121" height="51" alt="Logo">
                         </a>
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span class="sr-only">Navigation ein-/ausblenden</span>
@@ -105,7 +105,7 @@ and open the template in the editor.
                             <!-- Marcel Riedl Ende -->
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="../public/WarenkorbAnzeigen/anzeigen">Warenkorb</a></li>
+                            <li><a href="../public/WarenkorbController/getArtikel">Warenkorb</a></li>
                             <li><a href='../public/Registrieren_Controller'>Registrieren</a></li>
                             <li><a href="../public/LoginController/rufView">Login</a></li>
                             <li><a href="../public/Profielcontroller">Profil</a></li>

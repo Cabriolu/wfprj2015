@@ -9,6 +9,14 @@ UserStory: Als Programmierer möchte ich meinen Code als Model-View-Controller (
 Task: 140-2 (#10190) Eigenen Code an MVC anpassen
 Aufwand: 0,5 Stunden
 Beschreibung: Es wird ein View über ein bestimmtes Produkt erstellt.     -->
+
+<!--Sprint 1, Gruppe 4 Onlineshop
+Verfasser: Marcel Riedl Matrikelnummer: 3113845
+UserStory: Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
+Task: #10003 Produkte anlegen
+Datum: 23.10.2015 Version 1
+Zeitaufwand: 8 Stunden-->
+
 <main><div class="col-xs-6 col-lg-4">
         <?php
 // Christian Frindt
@@ -24,20 +32,16 @@ Beschreibung: Es wird ein View über ein bestimmtes Produkt erstellt.     -->
                 $preis = $data['data']['Preis'];
             }
 
-            echo '<h2>' . $data['data']['Name'] . '</h2>' . $data['data']['Hersteller'] . '<br>'
-            . $preis . '<br>';
-            echo 'Farbe:' . $data['data']['Farbe'] . ' Größe: ' . $data['data']['Groeße'];
+            echo '<div><h2>' . $data['data']['Name'] . '</h2>' . $data['data']['Hersteller'] . '<br>'
+            . $preis . ' € <br>';
+            echo 'Farbe:' . $data['data']['Farbe'] . ' <br>Größe: ' . $data['data']['Groeße'];
             $a++;
         }
         ?>
     </div>
-    <form action="ProduktansichtController.php" method="post">
-        <input type="submit" name="tabelle" value="Größentabelle">
-    </form><br>
-    <a href="../GroessentabelleDamen.php">Größentabelle</a>
     <form method="post">
-        <input type="hidden" name="add" value="<?php echo $id = $data['Produktnummer'] ?>">
-        <input type="submit" value="In den Warenkorb">
+        <input type="hidden" name="add" value="<?php echo $id = $data[$a - 1]['Produktnummer'] ?>">
+        <input type="submit" value="In den Warenkorb" href="../WarenkorbAnzeigen.php/anzeigen">
     </form>
     <form method="POST">
         <input type="submit" value="Sofortkaufen">

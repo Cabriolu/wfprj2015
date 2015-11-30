@@ -13,15 +13,10 @@
 // Hier wird das Model dazu erstellt
 
 
-session_start();
 // include um die Klasse Connect_Mysql einzubinden
-include_once '../config/Connect_Mysql.php';
-// include Warenkorb von Frindt
-include '../lib/Warenkorb.php';
+require_once '../app/config/Connect_Mysql.php';
 // inlude Mailer von Kevljanin
-include '../controller/mail.php';
-// include Login von Frindt
-include '../models/LoginModel';
+
 
 class Bestellung_Model {
 
@@ -98,16 +93,9 @@ class Bestellung_Model {
         // Prepared Statement erstellen und ausführen
         $stmt = $con->prepare($this->sql);
         $stmt->execute();
-        $total = $stmt->rowCount();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $a = 0;
 
-        // Ausgabe
-        while ($a < $total) {
-            echo $row['straße'] . ' <br>' . $row['plz'] . ' ' . $row['ort'];
-            $a++;
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        }
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
     }
 
     // function um die Bestellung abzuschließen --> Speicherung in Table Bestellung und Bestellliste sowie berechnung von
@@ -166,14 +154,18 @@ class Bestellung_Model {
             $stmt->execute();
 
         //Objekt von Denis Kevljanins Mail
+        include '../controller/mail.php';
         $mail = new Mail();
-
-        $ende = 'Vielen Dank für Ihre Bestellung! Sie erhalten in Kürze eine Bestätigung per E-Mail.';
+        if($stmt->execute()){
+            $bool = true;
+        }else{
+            $bool = false;
+        }
         
         //Connection schließen
         $con = null;
         $this->con->schließen();
-        return $ende;
+        return $bool;
     }
 
 }

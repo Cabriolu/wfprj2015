@@ -1,14 +1,13 @@
 <?php
 
 
-class man extends Controller{
+class AGB_Controller extends Controller{
     
     public function index($name =''){
       
        //home index view
        
-        $this->view('manmain',[]);
+        $this->view('AGB/AGB_View',[]);
   
     }
 }
-

@@ -5,5 +5,19 @@ Task: 110-2 (#10190) MVC Programmieren
 Aufwand: 5 Stunden
 Beschreibung: Es wird der grundlegende Aufbau der Bestellabwicklung als MVC erstellt.
 Hier wird ein View dazu erstellt-->
+<main>
+    <div>
+        <h2>Ihre Rechnungsadresse:</h2>
+        <?php
+        $total = sizeof($data);
 
-<h2>Ihre Rechnungsadresse:</h2>
+        $a = 0;
+
+// Ausgabe
+        while ($a < $total) {
+            echo $data[$a]['straße'] . ' <br>' . $data[$a]['plz'] . ' ' . $data[$a]['ort'];
+            $a++;
+        }
+        ?>
+
+    </div>

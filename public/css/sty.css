@@ -20,6 +20,8 @@ header, nav, main, aside, footer {
 html{
     font-size: 100%;
     font-family: Verdana, sans-serif;
+    margin: 1rem auto;
+    
 }
 
 /*layoutbereich im body*/
@@ -28,6 +30,7 @@ body{
     font-size: 0.875rem;
     background: white url(../Grafiken/SchwarzerBalken.jpg) 0 0 repeat-x;
     margin: 1rem auto;
+    
     
 }
 

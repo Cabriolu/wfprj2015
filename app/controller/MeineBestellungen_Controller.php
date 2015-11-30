@@ -5,28 +5,18 @@
     Task: Alte Bestellungen anzeigen
     Aufwand: 10 Stunden
  -->
- <!-- Ridvan Atacan, 3113837
-    24.11.2015 Group #4 Onlineshop
-    Sprint 3, Task : 270-6 #10334
-    User Story: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
-    Task: Zusammenführen
-    Aufwand: 5 Stunden
- -->
 
 <?php
+//Zugriff auf Model Klasse
 
  
 class MeineBestellungen_Controller extends Controller{
-    
-    //Methode innerhalb der Klasse wird bei Erzeugung eines Controller Objekts erzeugt
+	//Methode innerhalb der Klasse wird bei Erzeugung eines Controller Objekts erzeugt
     public function index() {
        
-         
-         $bestellung = $this->model('MeineBestellungen_Model');
-         $data = $bestellung->alleBestellungen();
-         $this->view('Bestellung/MeineBestellungen_View', $data);
-         
-         
+         //$this->test();
+         $this->model('MeineBestellungen_Model');
+         $this->alleBestellungen();
          
     }
     

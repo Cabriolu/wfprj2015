@@ -6,8 +6,9 @@ class WarenkorbAnzeigen extends Controller{
     
     public function anzeigen(){
         echo 'hahahahahaha';
-        $this->view($this->name);
-        
+        $this->view('Header');
+        $this->view('Warenkorb/WarenkorbRender');
+        $this->view('Footer');
     }
     
     

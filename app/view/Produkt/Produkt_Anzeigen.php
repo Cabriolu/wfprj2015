@@ -5,6 +5,13 @@ Auswand: 2 Stunden
 Beschreibung: Er wird hier eine Liste aller verfügbarer Produkte angezeigt, um dann eines Löschen zu können
 -->
 
+<!--Sprint 1, Gruppe 4 Onlineshop
+Verfasser: Marcel Riedl Matrikelnummer: 3113845
+UserStory: Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
+Task: #10003 Produkte anlegen
+Datum: 23.10.2015 Version 1
+Zeitaufwand: 8 Stunden-->
+
 <main>
     <br>
     <h2>Produkte löschen</h2>

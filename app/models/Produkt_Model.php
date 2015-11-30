@@ -15,6 +15,16 @@
 //Task: 140-2 (#10190) Eigenen Code an MVC anpassen
 //Aufwand: 4 Stunden
 //Beschreibung: Es wird der grundlegende Aufbau des Produkts als MVC erstellt. 
+
+
+//Sprint 1, Gruppe 4 Onlineshop
+//Verfasser: Marcel Riedl Matrikelnummer: 3113845
+//UserStory: Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
+//Task: #10003 Produkte anlegen
+//Datum: 23.10.2015 Version 1
+//Zeitaufwand: 8 Stunden
+
+
 // Kerstin Gräter
 include_once '../app/config/Connect_Mysql.php';
 

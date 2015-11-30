@@ -19,10 +19,6 @@ class ProduktansichtController extends Controller {
         $this->view('Produkt/Produktansicht', ['data' => $produktliste->produktansicht($produktnummer)]);
         $this->view('Footer', ['view' => $produktliste->egal]);
         
-        if(isset($_POST['tabelle'])){
-            require_once '../app/view/Produkt/GroessentabelleDamen.php';
-        }
-        
     }
 
 }

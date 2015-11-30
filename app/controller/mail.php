@@ -6,7 +6,7 @@
 //Beschreibung: Es wird eine automatich generierte Bestellbestätigung verschickt 
 
 require ('../PHPMailer/PHPMailerAutoload.php');
-require ('../model/userdata.php');
+require ('../models/userdata.php');
    
 //Erstellen der Klasse Mail
 class Mail{
@@ -71,4 +71,3 @@ public function mail() {
     }
 }
 }
-$obj = new Mail();

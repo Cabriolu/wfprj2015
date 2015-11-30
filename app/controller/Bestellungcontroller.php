@@ -7,39 +7,18 @@
 //Aufwand: 5 Stunden
 //Beschreibung: Es wird der grundlegende Aufbau der Bestellabwicklung als MVC erstellt.
 // Hier wird der Controller dazu erstellt
-session_start();
-include_once '../models/Bestellung_Model.php';
-include '../models/LoginModel.php';
 
-class Bestellungcontroller {
+class Bestellungcontroller extends Controller {
 
-    function __construct() {
-        // Objekt von Bestellung_Model erstellen
-        $bestellung = new Bestellung_Model();
-        // Kundennummer anhand vom Login ermitteln
+    function index() {
+        $bestellung = $this->model('Bestellung_Model');
+
         $kundennummer = $_SESSION['logged']['id'];
-        require '../view/Bestellung/Rechnungsadresse.php';
-        // Anzeige der Rechnungsadresse
-        $bestellung->adresseanzeigen($kundennummer);
-        echo '<br>';
-        // Eingabe der Lieferadresse
-        require '../view/Bestellung/Lieferadresse.php';
-        $vorname = $_POST['vorname'];
-        $nachname = $_POST['nachname'];
-        $straße = $_POST['straße'];
-        $plz = $_POST['plz'];
-        $ort = $_POST['ort'];
 
-        // Ausführung sobald Button 'speichern' gedrückt wird
-        if (isset($_POST['speichern'])) {
-            $bestellung->adresse($vorname, $nachname, $straße, $plz, $ort, $kundennummer);
-        }
-        // Ausführung sobald Button 'los' gedrückt wird
-        if (isset($_POST['los'])) {
-            $bestellung->bestellungabschließen();
-        }
+        $this->view('Header');
+        $this->view('Bestellung/Rechnungsadresse', $bestellung->adresseanzeigen($kundennummer));
+        $this->view('Bestellung/Lieferadresse');
+        $this->view('Footer');
     }
 
 }
-
-new Bestellungcontroller();

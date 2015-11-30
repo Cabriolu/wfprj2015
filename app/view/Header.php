@@ -110,7 +110,7 @@ and open the template in the editor.
                             <li><a href="../public/LoginController/rufView">Login</a></li>
                             <li><a href="../public/Profielcontroller">Profil</a></li>
                             <!--            Verweis auf Suche_Controller von @Kevljanin,Denis-->
-                            <form class="navbar-form navbar-right" action="/WIFprojekt/public/Suche_Controller" method="post">
+                            <form class="navbar-form navbar-right" action="/wfprj2015/public/Suche_Controller" method="post">
                                 <input type="text" class="form-control" name="Suche" placeholder="Suchen...">
                                 <input type="submit" value="Suche" method="post" >
                             </form>

@@ -10,15 +10,16 @@ Hier wird der Controller dazu erstellt
 
 <?php
 
+class GTHcontroller extends Controller {
 
-class GTHcontroller extends Controller{
-    
-    public function index($name =''){
-        $user = $this->model('User');
-        $user->name = $name;
-       //home index view
-        $this->view('Header',['name'=> $user->name]);
-        $this->view('Produkt/GroessentabelleHerren',['name'=> $user->name]);
-        $this->view('Footer',['name'=> $user->name]);
+    public function index() {
+
+        //home index view
+//       if (isset($_POST['tabelle'])) {
+        $this->view('Header');
+        $this->view('Produkt/GroessentabelleHerren');
+        $this->view('Footer');
+//       }
     }
+
 }

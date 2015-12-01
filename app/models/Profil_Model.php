@@ -1,25 +1,29 @@
-﻿<!--Sprint 2, Gruppe 4 Onlineshop, Verfasser: Hanim Yerlikaya, Datum: 05.11.2015
-UserStory: Als Kunde möchte ich mein Profil verwalten.
-Task: 160-1 (#10195) Eigenen Code an MVC anpassen
-Aufwand: 10 Stunden
-Beschreibung: Der Kunde kann somit sein Profil bearbeiten und löschen     -->
+<!-- --Sprint 3, Gruppe 4 Onlineshop, 
+Verfasser: Hanim Yerlikaya, Datum: 24.11.2015
+UserStory: Passwortzurücksetzung mit automatischen Email-Versand programmieren
+Task: 200-1 (#10321) Passwort zurück setzen
+Aufwand: 5 Stunden
+Beschreibung: Der User kann ein einen neuen Passwort beantragen.  
+Ergänzung der Function " public function findByEmail($email) für das 3. Sprint" 
+
+Mysql-Connection benutzt von Kerstin Gräter  -->
 
 
 <?php
 
 class Profil_Model {
 
-/*
-	protected $id;
-	protected $vorname
-    protected $name;
-	protected $geschlecht;
-	protected $geburtstag
-    protected $strasse;
-    protected $plz;
-	protected $ort;
-	protected $tele;
-*/
+	public $id;
+        public $email;
+	public $vorname;
+        public $name;
+	public $geschlecht;
+	public $geburtstag;
+        public $strasse;
+        public $plz;
+	public $ort;
+	public $tele;
+        
 	protected $connection;
 
 	public function __construct() {
@@ -32,21 +36,35 @@ class Profil_Model {
 		{
 			$db = $this->connection->verbinden();
 			$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			
+                        
 			$sql = 'SELECT * FROM kunde left join adresse ON Kundennummer = Kunde_Kundennummer 
 										left join postleitzahl ON Postleitzahl_PLZ = PLZ 
-											where Kundennummer = '.$id.';';
-			$stmt = $db->query($sql);
+											where Kundennummer = :id;';
+			$stmt = $db->prepare($sql);
+                        $stmt->execute(array('id' => $id));
+                        
 			$stmt->setFetchMode(PDO::FETCH_ASSOC);
 			
 			if($row = $stmt->fetch())
 			{
-				$this->connection->schliessen();
-				return $row;
+				$this->connection->schließen();
+                                $profil = new Profil_Model();
+                                
+                                $profil->id = $row['Kundennummer'];
+                                $profil->email = $row['EMail_email'];
+                                $profil->vorname = $row['Vorname'];
+                                $profil->name = $row['Nachname'];
+                                $profil->geschlecht = $row['Geschlecht'];
+                                $profil->geburtstag = $row['Geburtsdatum'];
+                                $profil->strasse = $row['Straße'];
+                                $profil->plz = $row['PLZ'];
+                                $profil->ort = $row['Ort'];
+                                
+				return $profil;
 			}
 			else
 			{
-				$this->connection->schliessen();
+				$this->connection->schließen();
 				return null;
 			}
 		}
@@ -55,6 +73,51 @@ class Profil_Model {
 			print '<pre>'.$e.'</pre>';
 		}
     }
+    /*Ergänzung zum 3. Sprint*/
+    public function findByEmail($email) {
+		try
+		{
+			$db = $this->connection->verbinden();
+			$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			
+			$sql = 'SELECT * FROM kunde left join adresse ON Kundennummer = Kunde_Kundennummer 
+										left join postleitzahl ON Postleitzahl_PLZ = PLZ 
+											where EMail_email = :email;';
+                        
+			$stmt = $db->prepare($sql);
+                        $stmt->execute(array('email' => $email));
+			$stmt->setFetchMode(PDO::FETCH_ASSOC);
+			
+			if($row = $stmt->fetch())
+			{
+				$this->connection->schließen();
+                                
+                                $profil = new Profil_Model();
+                                $profil->id = $row['Kundennummer'];
+                                $profil->email = $row['EMail_email'];
+                                $profil->vorname = $row['Vorname'];
+                                $profil->name = $row['Nachname'];
+                                $profil->geschlecht = $row['Geschlecht'];
+                                $profil->geburtstag = $row['Geburtsdatum'];
+                                $profil->strasse = $row['Straße'];
+                                $profil->plz = $row['PLZ'];
+                                $profil->ort = $row['Ort'];
+                                
+				return $profil;
+			}
+			else
+			{
+				$this->connection->schließen();
+				return null;
+			}
+		}
+		catch(PDOException $e)
+		{
+			print '<pre>'.$e.'</pre>';
+		}
+    }
+    
+    /*Ende der Funktion bei der Ergänzung*/
 
     // function um ein Profil l�schen zu k�nnen
     public function loeschen($id) {
@@ -76,7 +139,7 @@ class Profil_Model {
 			$stmt = $db->prepare($sql);
 			$stmt->execute();
 		 
-			$this->connection->schliessen();
+			$this->connection->schließen();
 		}
 		catch(PDOException $e)
 		{
@@ -106,7 +169,7 @@ class Profil_Model {
 			$stmt = $db->prepare($sql);
 			$stmt->execute();
 		 
-			$this->connection->schliessen();
+			$this->connection->schließen();
 		}
 		catch(PDOException $e)
 		{

@@ -24,7 +24,7 @@ class Suche_Model {
     //Funktion mit dem SQL Prepare Statement und schließen der Connection
     public function suchabfrage() {
         $suche = $_POST['Suche'];
-        $sql = $this->con->prepare("SELECT Name, Hersteller, Preis FROM Produkt WHERE Name LIKE '%$suche%'");
+        $sql = $this->con->prepare("SELECT * FROM Produkt WHERE Name LIKE '%$suche%'");
         $sql->execute();
         
         $data = $sql->fetchAll(PDO::FETCH_ASSOC);

@@ -10,7 +10,7 @@ class Suche_Controller extends Controller{
         //Erstellen eines Objekts und Übergabe zum View
         $suche = $this->model('Suche_Model');
         $data = $suche->suchabfrage();
-        $this->view('ProduktAnzeigenSuche', $data);
+        $this->view('Produkt/SidebarView', $data);
 
     }
     

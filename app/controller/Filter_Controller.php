@@ -10,7 +10,9 @@ class Filter_Controller extends Controller{
         //Erstellen eines Objekts und Übergabe zum View
         $suche = $this->model('Filter_Model');
         $data = $suche->filterFarbe();
-        $this->view('ProduktAnzeigenSuche', $data);
+        $this->view('Header');
+        $this->view('Produkt/SidebarView', $data);
+        $this->view('Footer');
 
     }
     

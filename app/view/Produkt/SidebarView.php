@@ -1,22 +1,3 @@
-<!--Sprint 3, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 19.11.2015 Version 2
-UserStory: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
-Task: 170-1 (#10329) Zusammenführen
-Aufwand: 2 Stunden
-Beschreibung: Es wird ein View für alle Produkte aus einer Kategorie gezeigt  -->
-
-<!--//Sprint 2, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 02.11.2015 Version 1
-//UserStory: Als Programmierer möchte ich meinen Code als Model-View-Controller (MVC) haben.
-//Task: 140-2 (#10200) Eigenen Code an MVC anpassen
-//Aufwand: 0,5 Stunden
-//Beschreibung: Es wird der View der Produktliste erstellt. -->
-
-<!--Sprint 1, Gruppe 4 Onlineshop
-Verfasser: Marcel Riedl Matrikelnummer: 3113845
-UserStory: Als Kunde erwarte ich eine schnelle und einfache, sowie eine reibungslose Bestellabwicklung
-Task: #10003 Produkte anlegen
-Datum: 23.10.2015 Version 1
-Zeitaufwand: 8 Stunden-->
-
 <main>
     <!-- Section #3 -->
     <section id="about" data-speed="2" data-type="background">
@@ -34,12 +15,12 @@ Zeitaufwand: 8 Stunden-->
                         <li><a href="#">Exportieren</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <form action="wfprj2015/public/Filter_Controller" method="post">
-                            <input type="checkbox" name="blau" value="blau"/>blau<br>
-                            <input type="checkbox" name="rot" value="rot"/>rot<br>
-                            <input type="checkbox" name="schwarz" value="schwarz"/>schwarz<br>
-                            <input type="checkbox" name="beige" value="beige"/>beige<br>
-                            <input type="submit" value="Filter"/>
+                        <form>
+                            <input type="checkbox" name="blau" value="blau">blau<br>
+                            <input type="checkbox" name="rot" value="rot">rot<br>
+                            <input type="checkbox" name="schwarz" value="schwarz">schwarz<br>
+                            <input type="checkbox" name="beige" value="beige">beige<br>
+                            <input type="submit" action="wfprj2015/public/Filter_Controller" value="Filter" method="post">
                         </form>
                         <li><a href="">Noch ein Nav-Eintrag</a></li>
                         <li><a href="">Und noch einer</a></li>

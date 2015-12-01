@@ -1,5 +1,5 @@
 <?php
-// UPDATE AUF VERSION 2, 23.11.15
+
 //Sprint 3, Gruppe 4 Onlineshop, Verfasser: Kerstin Gräter, Datum: 23.11.2015 Version 2
 //UserStory: Als Kunde möchte ich ein in den wichtigsten Funktionen fertiges Ergebnis sehen.
 //Task: (270-2) #10330 Zusammenführen
@@ -12,11 +12,11 @@
 //Beschreibung: Es wird der grundlegende Aufbau der Bestellabwicklung als MVC erstellt.
 // Hier wird das Model dazu erstellt
 
+//Sprint 1: Bestellabwicklung 
+
 
 // include um die Klasse Connect_Mysql einzubinden
 require_once '../app/config/Connect_Mysql.php';
-// inlude Mailer von Kevljanin
-
 
 class Bestellung_Model {
 

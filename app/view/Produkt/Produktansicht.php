@@ -19,7 +19,7 @@ Zeitaufwand: 8 Stunden-->
 
 <main><div class="col-xs-6 col-lg-4">
         <?php
-// Christian Frindt
+        // Christian Frindt
         require_once '../app/lib/Warenkorb.php';
         $a = 0;
         $total = sizeof($data);
@@ -39,15 +39,25 @@ Zeitaufwand: 8 Stunden-->
         }
         ?>
     </div>
+    <!--    Von Christian Frindt-->
     <form method="post">
         <input type="hidden" name="add" value="<?php echo $id = $data['data']['Produktnummer'] ?>">
         <input type="submit" value="In den Warenkorb">
     </form>
-    <?php echo $id; if(isset($_SESSION['warenkorb'])){
+    <?php
+    echo $id;
+    if (isset($_SESSION['warenkorb'])) {
         var_dump($_SESSION['warenkorb']);
-    } ?>
-    
+    }
+    ?>
+    <!--    Christian Frindt Ende-->
     <form method="POST">
         <input type="submit" value="Sofortkaufen">
     </form>
-</main>
+
+    <!--  Von Kerstin Gräter -->
+    <form action='../GTHcontroller' method="post">
+        <input type="submit" value="Größentabelle" name="tabelle">
+    </form>
+    <!--  Kerstin Gräter Ende-->
+</main> 

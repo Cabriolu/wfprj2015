@@ -25,30 +25,27 @@ class Filter_Model {
 
 //Funktion mit dem SQL Prepare Statement und schließen der Connection
     public function filterFarbe() {
-        
+
         $base_sql = ("SELECT * FROM Produkt WHERE Farbe LIKE ");
-        if (isset($_POST['blau'])) {
+        if (isset($_GET['blau'])) {
             $sql_extra[] = "'%blau%'";
-            $a++;
         }
-        if (isset($_POST['rot'])) {
+        if (isset($_GET['rot'])) {
             $sql_extra[] = "'%rot%'";
-            $a++;
         }
-        if (isset($_POST['schwarz'])) {
+        if (isset($_GET['schwarz'])) {
             $sql_extra[] = "'%schwarz%'";
-            $a++;
         }
-        if (isset($_POST['beige'])) {
+        if (isset($_GET['beige'])) {
             $sql_extra[] = "'%beige%'";
-            $a++;
-        } else {
-            $sql_extra[] = "'%%'";
         }
-
-        $sql_where = implode(" OR Farbe LIKE ", $sql_extra);
+        if (!empty($sql_extra)) {
+            $sql_where = implode(" OR Farbe LIKE ", $sql_extra);
+        } else {
+            $sql_where = "'%%'";
+        }
         $sql = $base_sql . $sql_where;
-
+        print_r($sql);
         $stmt = $this->con->prepare($sql);
 
         $stmt->execute();

@@ -106,9 +106,9 @@ class Analyse_Model {
     // Marcel Riedl START
     function kunde($bool){
         if ($bool == true){
-            $this->sql = 'select count(kundennummer) from kunde where admin = 1;';
+            $this->sql = 'select count(kundennummer) from kunde where rolle = 1;';
         }else if($bool == false){
-            $this->sql = 'select count(kundennummer) from kunde where admin = 0;';
+            $this->sql = 'select count(kundennummer) from kunde where rolle = 0;';
         }else{
             $this->sql = 'select count(kundennummer) from kunde;';
         }
@@ -121,5 +121,18 @@ class Analyse_Model {
         $this->con->schließen();
         return $data;
     } // Marcel Riedl ENDE
+    
+    // Durchschnittspreis aus allen bestellungen
+    // Marcel Riedl START
+    function durchschnittpreis(){
+        $this->sql='select avg(gesamtpreis) as Durchschnittspreis from bestellung;';
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+        $stmt = $con->prepare($this->sql);
+        $data = $stmt->execute();
+        $con = null;
+        $this->con->schließen();
+        return $data;
+    }// Marcel Riedl ENDE
 
 }

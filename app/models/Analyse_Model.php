@@ -1,10 +1,10 @@
 <?php
 
 //Sprint 4, Gruppe 4 Onlineshop, Verfasser: Marcel Riedl, Datum: 09.11.2015 Version 2
-//UserStory: # Als Admin möchte ich verschiedene Analyse-Funktionen im Backend haben.
-//Task: - (#) Auslesen der notwendigen Daten aus der Datenbank
-//Aufwand: 2 Stunden
-//Beschreibung: Es wird das Analyse_Model erstellt. 
+//UserStory: #320 Als Admin möchte ich verschiedene Analyse-Funktionen im Backend haben.
+//Task: 320-2 (#10504) Auslesen der notwendigen Daten aus der Datenbank
+//Aufwand: 3 Stunden
+//Beschreibung: Es wird das Analyse_Model mit allen notwendigen Funktionen erstellt. 
 
 
 // Kerstin Gräter
@@ -15,7 +15,7 @@ class Analyse_Model {
     private $con;
     private $sql;
 
-    // function um den Gewinn durch ein einzelnen Produkt zu ermitteln
+    // function um den Umsatz durch ein einzelnen Produkt zu ermitteln
     // Marcel Riedl START
     function produktgewinn($produktnummer) {
         $this->sql = 'select menge, preis from bestellliste where produkt_produktnummer = ' . $produktnummer;
@@ -134,5 +134,33 @@ class Analyse_Model {
         $this->con->schließen();
         return $data;
     }// Marcel Riedl ENDE
+    
+    // Bestellungen pro Produkte
+    // Marcel Riedl START
+    function bestellungprodukt($produktnummer){
+        $this->sql='select sum(menge) from bestellliste where Produkt_produktnummer = '.$produktnummer;
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+        $stmt = $con->prepare($this->sql);
+        $data = $stmt->execute();
+        $con = null;
+        $this->con->schließen();
+        return $data;
+    }// Marcel Riedl ENDE
+    
+    // Rezensionen pro Produkt
+    // Marcel Riedl START
+    function umsatzprodukt($produktnummer){
+        $this->sql = 'select count(*) from rezension where produkt_Produktnummer = '.$produktnummer;
+        $this->con = new Connect_Mysql();
+        $con = $this->con->verbinden();
+        $stmt = $con->prepare($this->sql);
+        $data = $stmt->execute();
+        $con = null;
+        $this->con->schließen();
+        return $data;
+    }// Marcel Riedl ENDE
+    
+    
 
 }
